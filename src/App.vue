@@ -1,61 +1,43 @@
 <template>
-  <div id="app">
-    <!-- Header -->
-    <header class="header">
-      <div class="header-left">
-        <a href="mailto:your-email@example.com" aria-label="Email">
-          📧
-        </a>
-        <a href="/path-to-resume.pdf" target="_blank" aria-label="Resume">
-          📄
-        </a>
+  <div class="parallax-website">
+    <section 
+      class="hero" 
+      :style="{ backgroundImage: `url(${backgroundImage})` }"
+      @mousemove="updateParallax"
+    >
+      <div class="hero-content" :style="{ transform: `translate(${parallaxX}px, ${parallaxY}px)` }">
+        <h1>{{ name }}</h1>
+        <p>{{ profession }}</p>
       </div>
-      <h1 class="header-center">Avi Sharma</h1>
-      <div class="header-right">
-        <div class="icons">
-      <a :href="githubUrl" target="_blank" class="icon">
-        <i class="fab fa-github"></i>
-      </a>
-      <a :href="linkedinUrl" target="_blank" class="icon">
-        <i class="fab fa-linkedin"></i>
-      </a>
-        </div>
-      </div>
-    </header>
-
-    <!-- Navigation Buttons -->
-    <nav class="nav-buttons">
-      <button @click="scrollToSection('about')">About Me</button>
-      <button @click="scrollToSection('work')">View My Work</button>
-    </nav>
-
-    <!-- About Me Section -->
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>Brief introduction about yourself...</p>
     </section>
 
-    <!-- My Work Section -->
-    <section id="work" class="section">
-      <h2>My Work</h2>
-      <div class="toggle-switch">
-        <label>
-          <input type="radio" name="projectType" value="school" v-model="projectType" />
-          School Projects
-        </label>
-        <label>
-          <input type="radio" name="projectType" value="personal" v-model="projectType" />
-          Personal Projects
-        </label>
+    <section class="about-me">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>{{ aboutDescription }}</p>
+        <div class="skills">
+          <h3>Skills</h3>
+          <ul>
+            <li v-for="skill in skills" :key="skill">{{ skill }}</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <div v-if="projectType === 'school'">
-        <p>School Projects...</p>
-        <!-- Add your school projects here -->
-      </div>
-      <div v-if="projectType === 'personal'">
-        <p>Personal Projects...</p>
-        <!-- Add your personal projects here -->
+    <section class="projects">
+      <div class="container">
+        <h2>My Work</h2>
+        <div class="project-grid">
+          <div 
+            v-for="project in projects" 
+            :key="project.name" 
+            class="project-card"
+          >
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+            <a :href="project.link" target="_blank">View Project</a>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -65,105 +47,79 @@
 export default {
   data() {
     return {
-      projectType: "school", // default selection
-    };
+      name: 'Jane Doe',
+      profession: 'Software Developer & Designer',
+      backgroundImage: '/api/placeholder/1920/1080',
+      aboutDescription: 'Passionate developer with expertise in modern web technologies and creating intuitive user experiences.',
+      parallaxX: 0,
+      parallaxY: 0,
+      skills: [
+        'Vue.js', 
+        'React', 
+        'JavaScript', 
+        'CSS', 
+        'UI/UX Design'
+      ],
+      projects: [
+        {
+          name: 'Project Alpha',
+          description: 'A complex web application solving real-world problems.',
+          link: '#'
+        },
+        {
+          name: 'Design System',
+          description: 'Comprehensive design system for enterprise applications.',
+          link: '#'
+        }
+      ]
+    }
   },
   methods: {
-    scrollToSection(id) {
-      const section = document.getElementById(id);
-      section.scrollIntoView({ behavior: "smooth" });
-    },
-  },
-};
+    updateParallax(event) {
+      const container = event.currentTarget;
+      const containerRect = container.getBoundingClientRect();
+      
+      const mouseX = event.clientX - (containerRect.left + containerRect.width / 2);
+      const mouseY = event.clientY - (containerRect.top + containerRect.height / 2);
+
+      this.parallaxX = mouseX * 0.05;
+      this.parallaxY = mouseY * 0.05;
+    }
+  }
+}
 </script>
 
 <style scoped>
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.parallax-website {
+  font-family: 'Arial', sans-serif;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-  color: #333;
-}
-
-/* Header */
-.header {
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #333;
-  color: #fff;
-}
-
-.header-center {
-  flex: 1;
+  justify-content: center;
+  color: white;
   text-align: center;
 }
 
-.header-left a,
-.header-right a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 0.5rem;
+.about-me, .projects {
+  padding: 4rem 2rem;
+  background-color: #f4f4f4;
 }
 
-.header-left {
-  flex: 0.2;
-}
-
-.header-right {
-  flex: 0.2;
-}
-
-.header a i {
-  font-size: 1.2rem;
-}
-
-/* Navigation Buttons */
-.nav-buttons {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
-}
-
-.nav-buttons button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.nav-buttons button:hover {
-  background-color: #555;
-}
-
-/* Sections */
-.section {
-  padding: 2rem;
-}
-
-.section h2 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.toggle-switch {
-  display: flex;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
-.toggle-switch label {
-  cursor: pointer;
+.project-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 </style>
