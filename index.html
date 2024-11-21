@@ -6,6 +6,72 @@
   <title>Avi Sharma - Portfolio</title>
   <style>
     /* General Styles */
+    body {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 0px;
+}
+
+.contact-section h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.contact-section p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #dcdcdc;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-card {
+  background: #2b2b44;
+  border-radius: 10px;
+  padding: 15px 25px;
+  text-align: left;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.contact-card a {
+  color: #50b3a2;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 20px;
+  color: #b3b3b3;
+}
+
+footer a {
+  color: #50b3a2;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
     body, html {
       height: 100%;
       margin: 0;
@@ -32,15 +98,66 @@
       padding: 50px 80px;
       text-align: justify;
     }
+    /* Parallax Section */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  color: #fff; /* Text color for visibility */
+  text-align: center; /* Center-align the text */
+  padding: 20px; /* Add padding for spacing */
+}
 
-    /* Parallax Backgrounds */
-    .parallax {
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-height: 500px;
-    }
+/* Centered Content */
+.content-center {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center-align each item */
+  gap: 20px; /* Add spacing between items */
+}
+
+/* Name Style */
+.name {
+  font-size: 3em; /* Larger font for the name */
+  font-weight: bold;
+  margin: 0;
+  color: #ff1818; /* Example color */
+}
+
+/* About Me Description */
+.description {
+  font-size: 1.2em; /* Slightly larger for readability */
+  max-width: 600px; /* Limit width for text */
+  line-height: 1.6; /* Improve readability */
+  margin: 0;
+}
+
+/* Buttons Container */
+.buttons {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+}
+
+.button {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007BFF; /* Button background color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker button on hover */
+}
+
+
 
     .bgimg-1 {
       background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
@@ -75,6 +192,16 @@
         background-attachment: scroll;
       }
     }
+    .bgimg-3 {
+  background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
+  min-height: 200px; /* Change this to your desired height */
+}
+.bgimg-1 {
+  background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
+  min-height: 800px; /* Change this to your desired height */
+  min-width: 1000px;
+}
+
 
     /* Projects Section */
     .projects-section {
@@ -153,24 +280,33 @@
 <body>
 
   <!-- Parallax Section 1 -->
+
   <div class="parallax bgimg-1">
-    <div class="caption">
-      <span class="border">Avi Sharma</span>
+    <div class="content-center">
+      <h1 class="name">Hi, I'm Avi Sharma.</h1>
+      <p class="description">
+        
+      </p>
+      <div class="buttons">
+        <a href="#contact"
+        class="button">Get in touch</a>
+      <a href="#projects" class="button">View my work</a>
     </div>
   </div>
+</div>
+  
+
 
   <!-- About Me Section -->
   <div class="content">
     <h3>About Me</h3>
     <p>I am an aspiring high school engineer passionate about robotics, programming, and aerospace. I lead autonomous programming for my FRC team and actively organize and mentor STEM initiatives such as TARC and summer camps.</p>
   </div>
-
-  <!-- Parallax Section 2 -->
  
 
   <!-- My Work Section -->
   <div class="projects-section">
-    <h2>My Work</h2>
+    <h2 id="projects">My Work</h2>
     <p>Take a look at some of my best personal and collaborative projects.</p>
     <div class="projects-container">
       <!-- Project 1 -->
@@ -179,11 +315,15 @@
         <h3>FRC Scouting App</h3>
         <p>A SwiftUI app to scout FRC matches using Firebase and The Blue Alliance API.</p>
       </div>
-      <!-- Project 2 -->
       <div class="project-box">
-        <img src="path-to-image2.jpg" alt="BAAP Website">
-        <h3>BAAP Website</h3>
-        <p>A Vue.js-powered website for showcasing student projects and achievements.</p>
+        <img src="path-to-image2.jpg" alt="Betterness">
+        <h3>Betterness</h3>
+        <p>A SwiftUI app built for tracking personal progress and growth.</p>
+      </div>
+      <div class="project-box">
+        <img src="/image.png" alt="Comet 1885">
+        <h3>Comet FRC</h3>
+        <p>A Java powered repo utlizing many different libararies.</p>
       </div>
     </div>
   </div>
@@ -192,12 +332,32 @@
   <div class="parallax bgimg-3"></div>
 
   <!-- Contact Section -->
-  <div class="content">
-    <h3>Contact Me</h3>
-    <p>Email: asharmava1@gmail.com</p>
-    <p>Phone: 703-389-6711</p>
-    <p>Find me on <a href="https://github.com">GitHub</a> or <a href="https://linkedin.com">LinkedIn</a>.</p>
+  <div class="contact-section">
+    <h3 id="contact">Contact</h3>
+    <p>Feel free to reach out if you're interested in working together!</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <span>Email</span>
+        <a href="mailto:asharmava1@gmail.com">asharmava1@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <span>Phone</span>
+        <a href="tel:+17033896711">703-389-6711</a>
+      </div>
+      <div class="contact-card">
+        <span>GitHub</span>
+        <a href="https://github.com" target="_blank">github.com</a>
+      </div>
+      <div class="contact-card">
+        <span>LinkedIn</span>
+        <a href="https://linkedin.com" target="_blank">linkedin.com</a>
+      </div>
+    </div>
+    <footer>
+      <p>Built using HTML and CSS. View <a href="https://github.com">source code</a>.</p>
+    </footer>
   </div>
+  
 
   <!-- Footer -->
   <div class="footer">

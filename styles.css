@@ -1,0 +1,52 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1b2735; /* Dark blue background */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container */
+  .container {
+    text-align: center;
+  }
+  
+  /* Heading Styles */
+  h1 {
+    font-size: 3rem;
+  }
+  
+  .name {
+    color: #ffffff; /* White text for the name */
+  }
+  
+  /* Description Styles */
+  .description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+  
+  /* Button Styles */
+  .buttons {
+    margin-top: 2rem;
+  }
+  
+  .button {
+    text-decoration: none;
+    color: #1b2735; /* Dark text for contrast */
+    background-color: #fdb827; /* Gold button background */
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  
+  .button:hover {
+    background-color: #e6a700; /* Slightly darker gold on hover */
+  }
