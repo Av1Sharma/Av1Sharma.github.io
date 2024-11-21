@@ -159,17 +159,22 @@ footer a:hover {
 
 
 
-    .bgimg-1 {
-      background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
-    }
+.bgimg-1 {
+  background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
+  min-height: 800px; /* Change this to your desired height */
+  min-width: 1000px;
+}
 
     .bgimg-2 {
       background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
     }
 
     .bgimg-3 {
-      background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
-    }
+  background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
+  min-height: 200px;
+  height: auto; /* Allow min-height to take effect */
+}
+
 
     .caption {
       position: absolute;
@@ -192,15 +197,8 @@ footer a:hover {
         background-attachment: scroll;
       }
     }
-    .bgimg-3 {
-  background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
-  min-height: 200px; /* Change this to your desired height */
-}
-.bgimg-1 {
-  background-image: url("https://as1.ftcdn.net/v2/jpg/03/28/59/72/1000_F_328597241_OHLLfNFVMVdp436A5aN0FViQe0JxAYaP.jpg");
-  min-height: 800px; /* Change this to your desired height */
-  min-width: 1000px;
-}
+  
+
 
 
     /* Projects Section */
@@ -311,12 +309,12 @@ footer a:hover {
     <div class="projects-container">
       <!-- Project 1 -->
       <div class="project-box">
-        <img src="path-to-image1.jpg" alt="FRC Scouting App">
+        <img src="/first.png" alt="FRC Scouting App">
         <h3>FRC Scouting App</h3>
         <p>A SwiftUI app to scout FRC matches using Firebase and The Blue Alliance API.</p>
       </div>
       <div class="project-box">
-        <img src="path-to-image2.jpg" alt="Betterness">
+        <img src="/betterness.jpg" alt="Betterness">
         <h3>Betterness</h3>
         <p>A SwiftUI app built for tracking personal progress and growth.</p>
       </div>
@@ -325,6 +323,7 @@ footer a:hover {
         <h3>Comet FRC</h3>
         <p>A Java powered repo utlizing many different libararies.</p>
       </div>
+      
     </div>
   </div>
 
