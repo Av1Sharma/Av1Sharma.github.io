@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avi Sharma - Portfolio</title>
   <style>
@@ -13,55 +14,54 @@
   text-align: center;
   padding: 0px;
 }
-
-.contact-section h3 {
-  font-size: 2em;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.contact-section p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  color: #dcdcdc;
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
 .contact-cards {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  gap: 20px;
+  margin-top: 15px;
 }
 
 .contact-card {
-  background: #2b2b44;
-  border-radius: 10px;
-  padding: 15px 25px;
-  text-align: left;
-  width: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-card span {
-  display: block;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #ffffff;
 }
 
 .contact-card a {
-  color: #50b3a2;
+  font-size: 1.5em;
+  color: #50b3a2; /* Icon color */
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-card a:hover {
-  text-decoration: underline;
+  color: #007BFF; /* Icon color on hover */
+}
+
+.contact-card i {
+  margin-right: 5px;
 }
 
 footer {
   margin-top: 20px;
-  color: #b3b3b3;
+  font-size: 0.9em;
 }
+
 
 footer a {
   color: #50b3a2;
@@ -360,27 +360,34 @@ footer a:hover {
   <div class="parallax bgimg-3"></div>
 
   <!-- Contact Section -->
-  <div class="contact-section">
-    <h3 id="contact">Contact</h3>
-    <p>Feel free to reach out if you're interested in working together!</p>
-    <div class="contact-cards">
-      <div class="contact-card">
-        <span>Email</span>
-        <a href="mailto:asharmava1@gmail.com">asharmava1@gmail.com</a>
-      </div>
-      <div class="contact-card">
-        <span>GitHub</span>
-        <a href="https://github.com" target="_blank">github.com</a>
-      </div>
-      <div class="contact-card">
-        <span>LinkedIn</span>
-        <a href="https://linkedin.com" target="_blank">linkedin.com</a>
-      </div>
+<div class="contact-section">
+  <h3 id="contact">Contact</h3>
+  <p>Feel free to reach out if you're interested in working together!</p>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <span>Email</span>
+      <a href="mailto:asharmava1@gmail.com">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
-    <footer>
-      <p>Built using HTML and CSS. View <a href="https://github.com">source code</a>.</p>
-    </footer>
+    <div class="contact-card">
+      <span>GitHub</span>
+      <a href="https://github.com/Av1Sharma" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="contact-card">
+      <span>LinkedIn</span>
+      <a href="https://www.linkedin.com/in/avi-sharma-aa5a73223" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
   </div>
+  <footer>
+    <p>Built using HTML and CSS. View <a href="https://github.com/Av1Sharma">source code</a>.</p>
+  </footer>
+</div>
+
   
 
   <!-- Footer -->
