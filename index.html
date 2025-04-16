@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -21,6 +21,23 @@
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
   <style>
+    .parallax {
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #typewriter::after {
+      content: '|';
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
     .lightbox:hover {
       transform: scale(1.05);
       z-index: 10;
@@ -35,67 +52,69 @@
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
-  <div class="container mx-auto px-4 py-8">
-    <!-- Header with Typewriter Effect and Theme Toggle -->
-    <div class="flex justify-between items-center mb-8">
-      <h1 id="typewriter" class="text-4xl font-bold whitespace-nowrap"><span id="typed-text"></span><span id="cursor" class="ml-1">|</span></h1>
-      <button id="theme-toggle" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-md">
-        <i id="theme-icon" class="fas fa-sun"></i>
-      </button>
-    </div>
 
-    <!-- Projects -->
-    <div class="mb-12">
-      <h2 class="text-4xl font-bold text-center mb-8">Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
-        <!-- Project Card -->
-        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow transform transition-transform duration-300 lightbox flex flex-col h-[420px]">
+  <!-- Hero / Typewriter Section -->
+  <section class="parallax min-h-screen flex flex-col justify-center items-center text-center px-4 bg-blue-100 dark:bg-blue-950">
+    <h1 id="typewriter" class="text-5xl md:text-6xl font-bold mb-4">Hi, I'm Avi Sharma.</h1>
+    <p class="text-lg md:text-xl max-w-xl mb-6">A passionate developer and creator, building apps, solving problems, and exploring tech through robotics and design.</p>
+    <div class="flex gap-4">
+      <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition">View My Work</a>
+      <a href="#contact" class="bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 px-6 py-2 rounded-full transition">Get in Contact</a>
+    </div>
+    <button id="theme-toggle" class="absolute top-4 right-4 bg-gray-200 dark:bg-gray-700 p-2 rounded-md">
+      <i id="theme-icon" class="fas fa-sun"></i>
+    </button>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="parallax bg-gray-100 dark:bg-gray-800 py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-10">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project Cards -->
+        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow lightbox flex flex-col h-[420px]">
           <img src="first.png" alt="FRC Scouting App" class="project-img rounded mb-4">
           <h3 class="text-xl font-bold mb-2">FRC Scouting App</h3>
           <p class="text-sm">An app which can be used as alternative to TBA to collect and analyze match data for strategic decisions.</p>
         </div>
-
-        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow transform transition-transform duration-300 lightbox flex flex-col h-[420px]">
+        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow lightbox flex flex-col h-[420px]">
           <img src="betterness.jpg" alt="Betterness" class="project-img rounded mb-4">
           <h3 class="text-xl font-bold mb-2">Betterness</h3>
           <p class="text-sm">A SwiftUI wellness app that tracks moods, journals, and personal growth metrics.</p>
         </div>
-
-        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow transform transition-transform duration-300 lightbox flex flex-col h-[420px]">
+        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow lightbox flex flex-col h-[420px]">
           <img src="COMET.png" alt="Comet FRC" class="project-img rounded mb-4">
           <h3 class="text-xl font-bold mb-2">Comet FRC</h3>
           <p class="text-sm">A Java-based control system for our FRC team's Marina robot.</p>
         </div>
-
-        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow transform transition-transform duration-300 lightbox flex flex-col h-[420px]">
+        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow lightbox flex flex-col h-[420px]">
           <img src="BAAP.png" alt="BAAP Website" class="project-img rounded mb-4">
           <h3 class="text-xl font-bold mb-2">BAAP Website</h3>
           <p class="text-sm">A website for the Battlefield High School Aeronautics and Aviation Program featuring team pages and flight logs.</p>
         </div>
-
-        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow transform transition-transform duration-300 lightbox flex flex-col h-[420px]">
+        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow lightbox flex flex-col h-[420px]">
           <img src="todo-public.webp" alt="ToDo Public" class="project-img rounded mb-4">
           <h3 class="text-xl font-bold mb-2">ToDo Public</h3>
           <p class="text-sm">A public to-do list app using Swift.</p>
         </div>
-
-        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow transform transition-transform duration-300 lightbox flex flex-col h-[420px]">
+        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow lightbox flex flex-col h-[420px]">
           <img src="SpotiStats.jpg" alt="SpotiStats" class="project-img rounded mb-4">
           <h3 class="text-xl font-bold mb-2">SpotiStats</h3>
           <p class="text-sm">A Spotify data analytics dashboard that visualizes listening habits and top tracks.</p>
         </div>
-
-        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow transform transition-transform duration-300 lightbox flex flex-col h-[420px]">
-          <img src="https://via.placeholder.com/400x200" alt="F1 Telemetry Project" class="project-img rounded mb-4">
+        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow lightbox flex flex-col h-[420px]">
+          <img src="f1.webp" alt="F1 Telemetry Project" class="project-img rounded mb-4">
           <h3 class="text-xl font-bold mb-2">F1 Telemetry Project</h3>
           <p class="text-sm">A data visualization and prediction tool using FastF1 telemetry data to analyze races and predict outcomes.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Timeline -->
-    <div class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4">Timeline</h2>
+  <!-- Timeline & Contact Section -->
+  <section id="contact" class="parallax bg-blue-50 dark:bg-gray-950 py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Timeline</h2>
       <div class="border-l-4 border-blue-500 pl-4 space-y-6">
         <div>
           <h3 class="text-xl font-bold">2022-23</h3>
@@ -110,39 +129,24 @@
           <p>Finished several iOS apps, nominated for Dean's List, founded BHS Avionics participating in TARC, and took COMET Robotics to districts.</p>
         </div>
       </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="text-center py-4 border-t dark:border-gray-700">
-      <p>© 2025 Avi Sharma. All rights reserved.</p>
-      <div class="flex justify-center space-x-6 mt-4">
-        <a href="https://www.linkedin.com/in/avi-sharma/" target="_blank" class="text-gray-800 dark:text-white hover:text-blue-500">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="https://github.com/avi-sharma" target="_blank" class="text-gray-800 dark:text-white hover:text-black">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
-      </div>
-    </footer>
-  </div>
+      <footer class="text-center mt-12 pt-6 border-t dark:border-gray-700">
+        <p>© 2025 Avi Sharma. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 mt-4">
+          <a href="https://www.linkedin.com/in/avi-sharma/" target="_blank" class="text-gray-800 dark:text-white hover:text-blue-500">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="https://github.com/avi-sharma" target="_blank" class="text-gray-800 dark:text-white hover:text-black">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </section>
+ 
+  
 
   <script>
-    const text = "Hi, I'm Avi Sharma.";
-    let i = 0;
-    const typedText = document.getElementById("typed-text");
-    const cursor = document.getElementById("cursor");
-
-    function typeWriter() {
-      if (i < text.length) {
-        typedText.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 75);
-      } else {
-        cursor.classList.add("animate-pulse");
-      }
-    }
-    typeWriter();
-
     const toggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
 
@@ -160,6 +164,7 @@
       document.documentElement.classList.toggle('dark');
       updateThemeIcon();
     });
+
     updateThemeIcon();
   </script>
 </body>
