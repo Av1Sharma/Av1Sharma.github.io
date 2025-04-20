@@ -1,37 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BAAP Website</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #001f3f; /* Navy blue background */
-      color: black;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAAP Website - Avi Sharma Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .parallax {
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   </style>
-<body>
-  <div class="project-page">
-    <!-- Media Section -->
-    <div class="media-section">
-      <img src="/images/website.png" alt="BAAP Website preview" class="project-image">
-      <div class="media-buttons">
-        <a href="https://bhsavionics.github.io" class="button">Visit Live Website</a>
-        <a href="https://github.com/bhsavionics/bhsavionics.github.io" class="button">View Source Code</a>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
+  <section class="parallax min-h-screen flex flex-col justify-center items-center text-center px-4 bg-blue-100 dark:bg-blue-950">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4">BAAP Website</h1>
+    <p class="text-lg md:text-xl max-w-xl mb-6">A website for the Battlefield High School Aeronautics and Aviation Program, showcasing program details and event updates.</p>
+    <div class="flex gap-4">
+      <a href="#details" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition">Project Details</a>
+      <a href="/index.html" class="bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 px-6 py-2 rounded-full transition">Back to Portfolio</a>
+    </div>
+  </section>
+
+  <section id="details" class="bg-gray-100 dark:bg-gray-800 py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-10">Project Details</h2>
+      <p class="text-lg mb-6">The BAAP Website is designed to provide information about the Battlefield High School Aeronautics and Aviation Program, along with event scheduling, news, and program updates.</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Program details and events</li>
+        <li>Member resources</li>
+        <li>Interactive elements and custom graphics</li>
+      </ul>
+      <p class="mt-6">Built with: HTML, CSS, JavaScript</p>
+      <div class="mt-8 text-center">
+        <img src="baap-website.jpg" alt="BAAP Website" class="max-w-md mx-auto rounded shadow">
       </div>
     </div>
-    
-    <!-- Description Section -->
-    <div class="description-section">
-      <h1>BAAP Website</h1>
-      <p><strong>Capabilities:</strong> The BAAP Website serves as an informational hub for the organization, featuring clean navigation, detailed content about services, and an intuitive user interface designed for accessibility and efficiency.</p>
-      <p><strong>Development Time:</strong> Approximately 2 months.</p>
-      <p><strong>Languages & Libraries:</strong> HTML, CSS, and JavaScript.</p>
-    </div>
-  </div>
+  </section>
+
+  <footer class="text-center mt-12 pt-6 border-t dark:border-gray-700">
+    <p>© 2025 Avi Sharma. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>

@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ToDo Public - Avi Sharma</title>
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"DM Sans"', 'Inter', 'sans-serif']
-          }
-        }
-      }
-    };
-  </script>
+  <title>ToDo Public - Avi Sharma Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .parallax {
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
-  <div class="min-h-screen flex flex-col justify-center items-center text-center px-4">
-    <h1 class="text-4xl font-bold mb-4">ToDo Public</h1>
-    <p class="text-lg mb-8 max-w-2xl">Project description coming soon...</p>
-    <img src="todo-public.webp" alt="ToDo Public" class="rounded shadow-lg max-w-xl mb-6" />
-    <a href="index.html" class="text-blue-500 hover:underline">← Back to Home</a>
-  </div>
+  <section class="parallax min-h-screen flex flex-col justify-center items-center text-center px-4 bg-blue-100 dark:bg-blue-950">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4">ToDo Public</h1>
+    <p class="text-lg md:text-xl max-w-xl mb-6">A public task management app that allows users to create and track tasks with collaborative features.</p>
+    <div class="flex gap-4">
+      <a href="#details" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition">Project Details</a>
+      <a href="/index.html" class="bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 px-6 py-2 rounded-full transition">Back to Portfolio</a>
+    </div>
+  </section>
+
+  <section id="details" class="bg-gray-100 dark:bg-gray-800 py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-10">Project Details</h2>
+      <p class="text-lg mb-6">ToDo Public is a collaborative task management tool that helps users track and manage tasks, share them with others, and stay organized.</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Task creation and management</li>
+        <li>Collaborative features for teams</li>
+        <li>Real-time updates and notifications</li>
+      </ul>
+      <p class="mt-6">Built with: React, Node.js, MongoDB</p>
+      <div class="mt-8 text-center">
+        <img src="todo-public.jpg" alt="ToDo Public" class="max-w-md mx-auto rounded shadow">
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center mt-12 pt-6 border-t dark:border-gray-700">
+    <p>© 2025 Avi Sharma. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>
