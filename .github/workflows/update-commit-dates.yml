@@ -2,7 +2,7 @@ name: Update Commit Dates
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # every 6 hours
+    - cron: '0 0 */2 * *'  # every 2 days at midnight
   workflow_dispatch:
 
 jobs:
