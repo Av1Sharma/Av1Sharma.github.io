@@ -21,7 +21,7 @@ const projects = [
     {
         name: 'FRC Scouting App',
         repo: 'Av1Sharma/FRC-ScoutingApp',
-        element: document.querySelector('a[href="/projects/frc-scouting-app.html"]')
+        element: document.querySelector('a[href="/projects/QSTAR.html"]')
     },
     {
         name: 'Betterness',
@@ -42,11 +42,6 @@ const projects = [
         name: 'ToDo Public',
         repo: 'Av1Sharma/ToDo',
         element: document.querySelector('a[href="/projects/todo-public.html"]')
-    },
-    {
-        name: 'BetterVue',
-        repo: 'Av1Sharma/studentvue-gradebook-viewer',
-        element: document.querySelector('a[href="/projects/bettervue.html"]')
     }
 ];
 
