@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Avi Sharma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <header class="mb-8">
+            <a href="/" class="text-blue-600 hover:text-blue-700 flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+            <h1 class="text-4xl font-bold mt-4">Blog</h1>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Thoughts, projects, and updates</p>
+        </header>
+
+        <div class="space-y-8">
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold mb-2">Summer Progress and Projects</h2>
+                <div class="text-gray-600 dark:text-gray-400 mb-4">June 15-18, 2024</div>
+                <div class="prose dark:prose-invert max-w-none">
+                    <h3>June 15, 2024 - Getting Organized and Planning</h3>
+                    <p>Spent the early part of my day learning about Obsidian and how to properly use the application to keep track of my accomplishments and progress throughout the summer. Specifically these two videos helped me: <a href="https://www.youtube.com/watch?v=5x5ua7LecOI" class="text-blue-600 hover:text-blue-700">Obsidian Tutorial 1</a>, <a href="https://www.youtube.com/watch?v=xR5-0XDkwU0" class="text-blue-600 hover:text-blue-700">Obsidian Tutorial 2</a>. After realizing the importance of being organized again, I cleaned up my GitHub and pushed all commits that were just sitting idle locally.</p>
+                    
+                    <p>Spent today mostly planning my days throughout the summer. Defined my goals and tech stack I want to use to approach building my FRC Scouting App which will be powered by AI. Specifically, I created this goal in mind after watching my team struggle with scouting. By no means is this to replace conventional scouters, as it will open source and free for all. This application will merely serve to aid scouting leads or teams that are new to FIRST and need strategies to jump start their brain.</p>
+
+                    <h3>June 16, 2024 - FRC Scouting Web App Completion</h3>
+                    <p>Finished my FRC-Scouting Web App. This was a large project if I'm being honest, took me a solid two days to build this large app. The frontend was react and vite, something im semi familiar with but the backend was a doozy. I had previously used node.js and express but integrating a LLM request was something I had never done before. Tried OpenAI and then realized I had to pay, so I decided to use Groq and their free llama model. By no means is it better, but with enough context, the model performs decent. This isn't created to replace actual strategy, but only to supplement it or give a starting point.</p>
+
+                    <h3>June 17, 2024 - New Project Ideas</h3>
+                    <p>I'm thinking of starting on another Swift app, this one again more focused on health and wellness. The issue is I can't publish an app on the App Store for anything less than $100. It's kind of annoying.</p>
+                    
+                    <p>I will be building a sentiment analyzer for stocks. Obviously parsing through each and every stock is not viable, it will break my limit for where I host it. I'm thinking of selecting a few stocks or maybe just having it on a rotation based on which stock is being talked about the most in the news and X.</p>
+
+                    <h3>June 18, 2024 - Summer Commitment</h3>
+                    <p>Not gonna lie — I've been pretty lazy these past few days. Haven't really built anything new, and I can feel that itch to start creating again. I think it's easy to get stuck in the loop of comfort, especially after finishing a big project like the FRC Scouting App. But that's not why I'm here this summer.</p>
+
+                    <p>Starting today, I'm committing to building <strong>every single day</strong>. No exceptions. Whether it's pushing code, debugging something new, or learning a technical concept — I'm sprinting this summer. I'll be using GitHub daily again, consistently committing and updating progress. I want to treat this like a personal bootcamp.</p>
+
+                    <h4>Key Goals:</h4>
+                    <ul class="list-disc pl-6">
+                        <li>✅ <strong>Finish the FRC Design course</strong> – Deepening understanding of robot design principles</li>
+                        <li>✅ <strong>100 Days of Swift</strong> – Restarting seriously to have iOS development in my back pocket</li>
+                        <li>✅ <strong>Master FRC Command Scheduler</strong> – Building clean, scalable autonomous modes</li>
+                        <li>✅ <strong>High-Powered Rocket Project</strong> – Technical documentation and flight software guidance</li>
+                    </ul>
+
+                    <p>This summer is my reset button. Back to the grind. Back to building.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const toggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        function updateThemeIcon() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        }
+
+        if (toggle) {
+            toggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                updateThemeIcon();
+            });
+            updateThemeIcon();
+        }
+    </script>
+</body>
+</html> 
