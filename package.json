@@ -1,0 +1,13 @@
+{
+  "name": "avisharma-blog",
+  "version": "1.0.0",
+  "description": "Personal blog with Markdown support",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "marked": "^12.0.0",
+    "front-matter": "^4.0.2",
+    "fs-extra": "^11.2.0"
+  }
+} 
