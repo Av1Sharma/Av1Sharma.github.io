@@ -66,9 +66,7 @@
         class="bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 px-6 py-2 rounded-full transition">Get
         in Contact</a>
     </div>
-    <button id="theme-toggle" class="absolute top-4 right-4 bg-gray-200 dark:bg-gray-700 p-2 rounded-md">
-      <i id="theme-icon" class="fas fa-sun"></i>
-    </button>
+
   </section>
 
   <section id="projects" class="relative parallax bg-gray-100 dark:bg-gray-800 py-16 px-4">
@@ -136,6 +134,13 @@
               predict outcomes.</p>
           </div>
         </a>
+        <a href="/projects/civil-engineering-agent.html">
+          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow lightbox flex flex-col h-[420px]">
+            <img src="/images/civil_engineering.png" alt="Civil Engineering Agent" class="project-img rounded mb-4">
+            <h3 class="text-xl font-bold mb-2">Civil Engineering Agent</h3>
+            <p class="text-sm">An AI-powered agent designed to assist with civil engineering tasks and calculations.</p>
+          </div>
+        </a>
         <!-- <a href="/projects/bettervue.html">
           <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow lightbox flex flex-col h-[420px]">
             <img src="/images/bettervue.png" alt="BetterVue" class="project-img rounded mb-4">
@@ -198,26 +203,6 @@
 
   <script src="/js/project-sorter.js" defer></script>
   <script>
-    const toggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-
-    function updateThemeIcon() {
-      if (document.documentElement.classList.contains('dark')) {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-      } else {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-      }
-    }
-
-    toggle.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      updateThemeIcon();
-    });
-
-    updateThemeIcon();
-
     // Typewriter effect for name
     const typewriterText = "Hi, I'm Avi Sharma.";
     const typewriterElement = document.getElementById('typewriter');
