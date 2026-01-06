@@ -1,52 +1,723 @@
-/* General Styles */
+/* ===================================
+   CSS Reset & Base Styles
+   =================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1b2735; /* Dark blue background */
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111827;
     color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
   }
-  
-  /* Container */
-  .container {
-    text-align: center;
+}
+
+/* ===================================
+   Typography
+   =================================== */
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===================================
+   Layout Utilities
+   =================================== */
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 4rem 1rem;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+/* ===================================
+   Grid System
+   =================================== */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 640px) {
+  .sm-grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  /* Heading Styles */
+}
+
+@media (min-width: 768px) {
+  .md-grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .md-grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg-grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .lg-grid-cols-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ===================================
+   Spacing
+   =================================== */
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mb-12 { margin-bottom: 3rem; }
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-12 { margin-top: 3rem; }
+
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+
+.pt-6 { padding-top: 1.5rem; }
+.pl-4 { padding-left: 1rem; }
+
+/* ===================================
+   Parallax Sections
+   =================================== */
+.parallax {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: #dbeafe;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-section {
+    background-color: #172554;
+  }
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-section h1 {
+    font-size: 3.75rem;
+  }
+}
+
+.hero-section p {
+  font-size: 1.125rem;
+  max-width: 36rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-section p {
+    font-size: 1.25rem;
+  }
+}
+
+/* ===================================
+   Buttons
+   =================================== */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: #d1d5db;
+  color: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-secondary {
+    background-color: #374151;
+    color: #ffffff;
+  }
+}
+
+.btn-secondary:hover {
+  background-color: #9ca3af;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-secondary:hover {
+    background-color: #4b5563;
+  }
+}
+
+.btn-purple {
+  background-color: #9333ea;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.btn-purple:hover {
+  background-color: #7e22ce;
+  transform: scale(1.05);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===================================
+   Projects Section
+   =================================== */
+.projects-section {
+  position: relative;
+  background-color: #f3f4f6;
+  padding: 4rem 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .projects-section {
+    background-color: #1f2937;
+  }
+}
+
+.projects-section h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.project-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 420px;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-card {
+    background-color: #111827;
+  }
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.project-img {
+  width: 100%;
+  height: 216px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+/* ===================================
+   Culture Section
+   =================================== */
+.culture-section {
+  background-color: #dbeafe;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .culture-section {
+    background-color: #172554;
+  }
+}
+
+.culture-section a {
+  display: inline-block;
+  background-color: #9333ea;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.culture-section a:hover {
+  background-color: #7e22ce;
+  transform: scale(1.05);
+}
+
+.culture-section p {
+  margin-top: 1rem;
+  color: #4b5563;
+}
+
+@media (prefers-color-scheme: dark) {
+  .culture-section p {
+    color: #9ca3af;
+  }
+}
+
+/* ===================================
+   Culture Page Styles
+   =================================== */
+.culture-page {
+  background-color: #dbeafe;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  .culture-page {
+    background-color: #172554;
+  }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2563eb;
+  margin-bottom: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .back-link {
+    color: #60a5fa;
+  }
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.culture-page h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.culture-page .subtitle {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 2.5rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .culture-page .subtitle {
+    color: #9ca3af;
+  }
+}
+
+.culture-category {
+  margin-bottom: 3rem;
+}
+
+.culture-category h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.culture-item {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .culture-item {
+    background-color: #111827;
+  }
+}
+
+.culture-item:hover {
+  transform: scale(1.05);
+}
+
+.culture-item .title {
+  font-weight: 700;
+}
+
+.culture-item .title.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.culture-item .subtitle-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+@media (prefers-color-scheme: dark) {
+  .culture-item .subtitle-text {
+    color: #9ca3af;
+  }
+}
+
+.culture-item .status-complete {
+  font-size: 0.875rem;
+  color: #10b981;
+}
+
+/* ===================================
+   Timeline Section
+   =================================== */
+.timeline-section {
+  background-color: #eff6ff;
+  padding: 4rem 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .timeline-section {
+    background-color: #030712;
+  }
+}
+
+.timeline-section h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.timeline {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+.timeline-item {
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    border-top-color: #374151;
+  }
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+footer a:hover {
+  color: #3b82f6;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: #1f2937;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .social-links a {
+    color: #ffffff;
+  }
+}
+
+.social-links a:hover {
+  color: #3b82f6;
+}
+
+/* ===================================
+   Responsive Typography
+   =================================== */
+@media (min-width: 768px) {
   h1 {
     font-size: 3rem;
   }
   
-  .name {
-    color: #ffffff; /* White text for the name */
+  h2 {
+    font-size: 2.5rem;
   }
   
-  /* Description Styles */
-  .description {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
+  h3 {
+    font-size: 1.875rem;
   }
-  
-  /* Button Styles */
-  .buttons {
-    margin-top: 2rem;
-  }
-  
-  .button {
-    text-decoration: none;
-    color: #1b2735; /* Dark text for contrast */
-    background-color: #fdb827; /* Gold button background */
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-size: 1rem;
-    margin-right: 10px;
-  }
-  
-  .button:hover {
-    background-color: #e6a700; /* Slightly darker gold on hover */
-  }
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.transition {
+  transition: all 0.3s ease;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.relative {
+  position: relative;
+}
+
+.h-full {
+  height: 100%;
+}

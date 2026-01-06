@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,240 +7,214 @@
   <title>What I'm Into | Avi Sharma</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=DM+Sans:wght@400;700&display=swap"
     rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"DM Sans"', 'Inter', 'sans-serif']
-          }
-        }
-      }
-    };
-  </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-  <style>
-    .parallax {
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  </style>
+  <link href="/styles.css" rel="stylesheet" />
 </head>
 
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
+<body>
 
-  <section class="parallax bg-blue-100 dark:bg-blue-950 py-16 px-4 min-h-screen">
-    <div class="max-w-7xl mx-auto">
-      <a href="/" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline mb-8">
+  <section class="culture-page parallax">
+    <div class="container max-w-7xl mx-auto">
+      <a href="/" class="back-link">
         <i class="fas fa-arrow-left"></i> Back to Home
       </a>
-      <h1 class="text-4xl font-bold text-center mb-4">What I'm Into</h1>
-      <p class="text-center text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">What I've been watching, listening
+      <h1>What I'm Into</h1>
+      <p class="subtitle">What I've been watching, listening
         to, and generally vibing with. Proof I'm not just a robot.</p>
 
       <!-- Shows -->
-      <div class="mb-12">
-        <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">📺 Shows</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">The Sopranos</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">S1 EP8</p>
+      <div class="culture-category">
+        <h3>📺 Shows</h3>
+        <div class="grid grid-cols-2 sm-grid-cols-3 md-grid-cols-4 lg-grid-cols-5">
+          <div class="culture-item">
+            <p class="title">The Sopranos</p>
+            <p class="subtitle-text">S1 EP8</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">The Bear</p>
-            <p class="text-sm text-green-500">S4 ✓</p>
+          <div class="culture-item">
+            <p class="title">The Bear</p>
+            <p class="status-complete">S4 ✓</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">The Wire</p>
+          <div class="culture-item">
+            <p class="title">The Wire</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">Succession</p>
+          <div class="culture-item">
+            <p class="title">Succession</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">Severance</p>
+          <div class="culture-item">
+            <p class="title">Severance</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">Peaky Blinders</p>
+          <div class="culture-item">
+            <p class="title">Peaky Blinders</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">Daredevil</p>
+          <div class="culture-item">
+            <p class="title">Daredevil</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">Jujutsu Kaisen</p>
-            <p class="text-sm text-green-500">S1 ✓</p>
+          <div class="culture-item">
+            <p class="title">Jujutsu Kaisen</p>
+            <p class="status-complete">S1 ✓</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">My Hero Academia</p>
-            <p class="text-sm text-green-500">S1 ✓</p>
+          <div class="culture-item">
+            <p class="title">My Hero Academia</p>
+            <p class="status-complete">S1 ✓</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Mr Robot</p>
+          <div class="culture-item">
+            <p class="title completed">Mr Robot</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Normal People</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">S1 EP12</p>
+          <div class="culture-item">
+            <p class="title completed">Normal People</p>
+            <p class="subtitle-text">S1 EP12</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Death Note</p>
+          <div class="culture-item">
+            <p class="title completed">Death Note</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Vinland Saga</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">S2 EP24</p>
+          <div class="culture-item">
+            <p class="title completed">Vinland Saga</p>
+            <p class="subtitle-text">S2 EP24</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Band of Brothers</p>
+          <div class="culture-item">
+            <p class="title completed">Band of Brothers</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Superstore</p>
+          <div class="culture-item">
+            <p class="title completed">Superstore</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">One Day</p>
+          <div class="culture-item">
+            <p class="title completed">One Day</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">You</p>
+          <div class="culture-item">
+            <p class="title completed">You</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Suits</p>
+          <div class="culture-item">
+            <p class="title completed">Suits</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Seinfeld</p>
+          <div class="culture-item">
+            <p class="title completed">Seinfeld</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">HIMYM</p>
+          <div class="culture-item">
+            <p class="title completed">HIMYM</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Adolescence</p>
+          <div class="culture-item">
+            <p class="title completed">Adolescence</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">True Detective</p>
-            <p class="text-sm text-green-500">S1 ✓</p>
+          <div class="culture-item">
+            <p class="title completed">True Detective</p>
+            <p class="status-complete">S1 ✓</p>
           </div>
         </div>
       </div>
 
       <!-- Movies -->
-      <div class="mb-12">
-        <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">🎬 Movies</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm">Fury</p>
+      <div class="culture-category">
+        <h3>🎬 Movies</h3>
+        <div class="grid grid-cols-2 sm-grid-cols-3 md-grid-cols-4 lg-grid-cols-5">
+          <div class="culture-item">
+            <p class="title text-sm">Fury</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm">Basketball Diaries</p>
+          <div class="culture-item">
+            <p class="title text-sm">Basketball Diaries</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm">The Secret Life of Walter Mitty</p>
+          <div class="culture-item">
+            <p class="title text-sm">The Secret Life of Walter Mitty</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Eternal Sunshine of the Spotless Mind</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Eternal Sunshine of the Spotless Mind</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Dead Poets Society</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Dead Poets Society</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Good Will Hunting</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Good Will Hunting</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Stand by Me</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Stand by Me</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Beautiful Boy</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Beautiful Boy</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">The Notebook</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">The Notebook</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Waves</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Waves</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">The Great Gatsby</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">The Great Gatsby</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Silver Linings Playbook</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Silver Linings Playbook</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Past Lives</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Past Lives</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Anchorman</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Anchorman</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Jaws</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Jaws</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">The Hateful Eight</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">The Hateful Eight</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">1917</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">1917</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Parasite</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Parasite</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">No Country for Old Men</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">No Country for Old Men</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Legends of the Fall</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Legends of the Fall</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Her</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Her</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Ford v Ferrari</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Ford v Ferrari</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold text-sm line-through opacity-60">Arrival</p>
+          <div class="culture-item">
+            <p class="title text-sm completed">Arrival</p>
           </div>
         </div>
       </div>
 
       <!-- Music -->
-      <div>
-        <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">🎵 Albums & Artists</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">Westside Gunn</p>
+      <div class="culture-category">
+        <h3>🎵 Albums & Artists</h3>
+        <div class="grid grid-cols-2 sm-grid-cols-3 md-grid-cols-4 lg-grid-cols-5">
+          <div class="culture-item">
+            <p class="title">Westside Gunn</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">Faye Webster</p>
+          <div class="culture-item">
+            <p class="title">Faye Webster</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">MF DOOM</p>
+          <div class="culture-item">
+            <p class="title">MF DOOM</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold">Outrageous Cherry</p>
+          <div class="culture-item">
+            <p class="title">Outrageous Cherry</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">boygenius</p>
+          <div class="culture-item">
+            <p class="title completed">boygenius</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Stranger in the Alps</p>
-            <p class="text-sm text-gray-500 dark:text-gray-400">Phoebe Bridgers</p>
+          <div class="culture-item">
+            <p class="title completed">Stranger in the Alps</p>
+            <p class="subtitle-text">Phoebe Bridgers</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Teezo Touchdown</p>
+          <div class="culture-item">
+            <p class="title completed">Teezo Touchdown</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Clairo</p>
+          <div class="culture-item">
+            <p class="title completed">Clairo</p>
           </div>
-          <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow text-center hover:scale-105 transition">
-            <p class="font-bold line-through opacity-60">Lorde</p>
+          <div class="culture-item">
+            <p class="title completed">Lorde</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <script>
-    // Check for dark mode preference
-    if (localStorage.getItem('darkMode') === 'true' ||
-      (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
 </body>
 
 </html>
