@@ -17,3 +17,13 @@ Use a server rather than opening the HTML files directly; asset and navigation p
 - `site.js`: project filtering, browser history, and the footer year.
 
 Core content and links work without JavaScript. JavaScript enables category filtering; the selected category is stored in the URL. Google Fonts is optional, with a system sans-serif fallback.
+
+## Updating shared assets
+
+After changing `styles.css`, `site.js`, or `favicon.svg`, run:
+
+```sh
+python3 scripts/version-assets.py
+```
+
+Commit the updated HTML files with the assets. The script adds content hashes to asset URLs so visitors load the matching files instead of a cached version from an earlier release. It is safe to run repeatedly and does not require a build step.
