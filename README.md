@@ -9,7 +9,7 @@ Use a server rather than opening the HTML files directly; asset and navigation p
 
 ## Editing
 
-- `index.html`: introduction, selected work, about, timeline, and contact.
+- `index.html`: introduction, selected work, about, and contact.
 - `projects/index.html`: all nine projects and category filters.
 - `projects/*.html`: individual project pages and their source/demo links.
 - `culture.html`: shows, movies, and music.

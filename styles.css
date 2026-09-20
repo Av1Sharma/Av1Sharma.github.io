@@ -426,27 +426,27 @@ a:hover {
   padding-block:83px
 }
 
-.about-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:100px
-}
-
-.about-grid h2 {
+.about-content h2 {
   font-size:43px;
   margin:22px 0 26px
+}
+
+.about-content {
+  max-width:640px;
+  text-align:center;
 }
 
 .about-copy {
   font-size:14px;
   color:var(--muted);
   line-height:1.85;
-  margin-bottom:18px;
-  max-width:450px
+  margin:0 auto 18px;
+  max-width:580px
 }
 
 .skill-list {
   display:flex;
+  justify-content:center;
   gap:7px;
   flex-wrap:wrap;
   margin-top:20px
@@ -457,39 +457,6 @@ a:hover {
   padding:5px 10px;
   border:1px solid #cdd4c6;
   border-radius:5px
-}
-
-.journey {
-  padding-top:5px
-}
-
-.journey>p {
-  margin-bottom:24px
-}
-
-.journey article {
-  display:grid;
-  grid-template-columns:85px 1fr;
-  gap:20px;
-  border-top:1px solid #d2d9cb;
-  padding:25px 0
-}
-
-.year {
-  color:var(--muted);
-  font-size:11px
-}
-
-.journey h3 {
-  font-size:19px;
-  margin:0 0 12px;
-  letter-spacing:-.02em
-}
-
-.journey article p {
-  font-size:13px;
-  line-height:1.8;
-  color:var(--muted)
 }
 
 .beyond {
@@ -887,10 +854,6 @@ a:hover {
     height:240px
   }
 
-  .about-grid {
-    gap:45px
-  }
-
   .beyond {
     gap:35px
   }
@@ -1055,18 +1018,8 @@ a:hover {
     padding-block:56px
   }
 
-  .about-grid {
-    grid-template-columns:1fr;
-    gap:44px
-  }
-
-  .about-grid h2 {
+  .about-content h2 {
     font-size:38px
-  }
-
-  .journey article {
-    grid-template-columns:75px 1fr;
-    gap:15px
   }
 
   .beyond {
