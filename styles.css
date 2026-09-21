@@ -176,14 +176,14 @@ a:hover {
 }
 
 .hero-intro h1 {
-  font-size:40px;
+  font-size:44px;
   line-height:1.12
 }
 
 .hero-intro>p {
   color:var(--muted);
-  max-width:355px;
-  margin-top:22px;
+  max-width:420px;
+  margin-top:20px;
   font-size:16px;
   line-height:1.8
 }
@@ -765,19 +765,26 @@ a:hover {
 
 .culture-grid {
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:12px
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px
 }
 
 .culture-item {
   padding:22px;
   background:var(--soft);
   border-radius:12px;
-  min-height:116px;
+  min-height:104px;
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  justify-content:center
+  justify-content:center;
+  transition:transform var(--transition), background var(--transition), box-shadow var(--transition)
+}
+
+.culture-item:hover {
+  transform:translateY(-2px);
+  background:#edece5;
+  box-shadow:0 4px 12px rgba(0,0,0,0.03)
 }
 
 .culture-item .title {
@@ -1128,6 +1135,12 @@ a:hover {
   .culture-grid {
     grid-template-columns:repeat(2,minmax(0,1fr));
     gap:10px
+  }
+
+  @media(max-width:440px) {
+    .culture-grid {
+      grid-template-columns:1fr
+    }
   }
 
   .culture-item {
