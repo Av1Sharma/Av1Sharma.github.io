@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A Chrome extension that integrates active recall timers and pattern transfer suggestions into NeetCode practice.">
+<meta name="theme-color" content="#f8f8f5"><title>NeetCode Recall Loop · Avi Sharma</title>
+<link rel="icon" href="/favicon.svg?v=96413a1869c7" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=dc85ed7f7625">
+<script src="/site.js?v=d53072161f1f" defer></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap"><a class="wordmark" href="/" aria-label="Avi Sharma home">avi.sharma</a>
+<nav aria-label="Main navigation"><a href="/">Home</a><a href="/projects/" aria-current="page">Projects</a><a href="/#about">About</a><a href="/culture.html">Beyond code</a></nav>
+<a class="header-contact" href="mailto:asharmava1@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></header>
+<main id="main" class="wrap">
+<section class="detail-heading"><a class="text-link back-link" href="/projects/">← All projects</a>
+<h1>NeetCode Recall Loop<span class="accent">.</span></h1>
+<p class="detail-description">A local Chrome extension that watches NeetCode problem attempts, prompting timed active recall checks and recommending pattern transfer neighbors.</p>
+<div class="detail-actions"><a class="button button-dark" href="https://github.com/Av1Sharma/neetcode-recall-loop" target="_blank" rel="noopener noreferrer">View source ↗</a></div>
+</section>
+<div class="detail-image"><img src="/images/neetcode-recall.svg" alt="NeetCode Recall Loop Chrome Extension" width="1440" height="960"></div>
+<section id="details" class="detail-content">
+<div>
+<h2>Behind the build.</h2>
+</div>
+<div class="prose">
+<p>Grinding LeetCode and NeetCode often leads to passive recognition rather than long-term algorithmic intuition. Recall Loop is a client-side Chrome extension designed to enforce deliberate practice and defeat the forgetting curve directly in the browser.</p>
+<ul>
+<li><strong>Automated Recall Checkpoints:</strong> Prompts reflection after an accepted submission or after set time thresholds (15m Easy, 25m Medium, 40m Hard) without looking at solutions.</li>
+<li><strong>Pattern Neighbor Suggestions:</strong> Recommends 2–3 algorithmic sister problems based on problem tags to test conceptual transfer before moving on.</li>
+<li><strong>Dynamic Session Plan:</strong> Surfaces problems due for recall when landing on NeetCode, prioritizing spaced repetition over random problem selection.</li>
+<li><strong>100% Client-Side Privacy:</strong> Practices and ratings are saved locally via Chrome’s <code>storage.local</code> API with zero external telemetry or authentication needed.</li>
+</ul>
+<p>Built with: JavaScript, Chrome Extensions Manifest V3, Webpack, Local Storage API</p>
+</div>
+</section>
+<a class="next-project" href="/projects/photos-classifier.html">
+<div>
+<h2>Photos Classifier</h2>
+</div>
+<span aria-hidden="true">↗</span></a></main>
+<footer class="site-footer wrap"><a class="wordmark" href="/">avi.sharma</a>
+<p><span>© <span data-year>2026</span> Avi Sharma</span></p>
+<div><a href="https://github.com/Av1Sharma" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:asharmava1@gmail.com">Email ↗</a></div>
+</footer>
+</body>
+</html>

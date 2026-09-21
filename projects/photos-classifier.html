@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An automated computer vision image classifier that sorted 50GB+ of robotics event photos using facial embeddings.">
+<meta name="theme-color" content="#f8f8f5"><title>Photos Classifier · Avi Sharma</title>
+<link rel="icon" href="/favicon.svg?v=96413a1869c7" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=dc85ed7f7625">
+<script src="/site.js?v=d53072161f1f" defer></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap"><a class="wordmark" href="/" aria-label="Avi Sharma home">avi.sharma</a>
+<nav aria-label="Main navigation"><a href="/">Home</a><a href="/projects/" aria-current="page">Projects</a><a href="/#about">About</a><a href="/culture.html">Beyond code</a></nav>
+<a class="header-contact" href="mailto:asharmava1@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></header>
+<main id="main" class="wrap">
+<section class="detail-heading"><a class="text-link back-link" href="/projects/">← All projects</a>
+<h1>Photos Classifier<span class="accent">.</span></h1>
+<p class="detail-description">A facial recognition crawler that processes and sorts 50GB+ of competition photos using 128-dimensional facial encodings.</p>
+<div class="detail-actions"><a class="button button-dark" href="https://github.com/Av1Sharma/PhotosClassifier" target="_blank" rel="noopener noreferrer">View source ↗</a></div>
+</section>
+<div class="detail-image"><img src="/images/photos-classifier.svg" alt="Photos Classifier Computer Vision Pipeline" width="1440" height="960"></div>
+<section id="details" class="detail-content">
+<div>
+<h2>Behind the build.</h2>
+</div>
+<div class="prose">
+<p>After a full season of FIRST Robotics competitions, our team had amassed over 50GB of raw, unsorted event photography. Finding individual photos of specific drive team members and pit crew manually was nearly impossible. I built an automated image crawler to solve the problem with computer vision.</p>
+<ul>
+<li><strong>Profile Learning:</strong> Parses a small directory of reference portraits to extract 128-dimensional facial embedding vectors using dlib’s deep residual network.</li>
+<li><strong>Bulk Batch Crawling:</strong> Streams through 50GB+ of high-resolution images in-place without duplicating large directories until positive matches are found.</li>
+<li><strong>Euclidean Distance Matching:</strong> Compares detected faces against known profiles with strict tolerance thresholds to eliminate false positives in crowded competition arenas.</li>
+<li><strong>Autonomous File Organization:</strong> Automatically categorizes and routes matching images into clean, per-person folders.</li>
+</ul>
+<p>Built with: Python, OpenCV, face_recognition (dlib), NumPy</p>
+</div>
+</section>
+<a class="next-project" href="/projects/betterness.html">
+<div>
+<h2>Betterness</h2>
+</div>
+<span aria-hidden="true">↗</span></a></main>
+<footer class="site-footer wrap"><a class="wordmark" href="/">avi.sharma</a>
+<p><span>© <span data-year>2026</span> Avi Sharma</span></p>
+<div><a href="https://github.com/Av1Sharma" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:asharmava1@gmail.com">Email ↗</a></div>
+</footer>
+</body>
+</html>
