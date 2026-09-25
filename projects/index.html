@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css?v=d569da64b7dc">
+    <link rel="stylesheet" href="/styles.css?v=66672eda2ce2">
     <script src="/site.js?v=d53072161f1f" defer></script>
 </head>
 
@@ -31,15 +31,39 @@
         <section class="project-collection" aria-label="Project collection">
             <div class="collection-toolbar">
                 <div class="filters" role="group" aria-label="Filter projects" hidden><button type="button"
-                        data-filter="All" aria-pressed="true">All</button><button type="button" data-filter="iOS"
-                        aria-pressed="false">iOS</button><button type="button" data-filter="Robotics"
+                        data-filter="All" aria-pressed="true">All</button><button type="button" data-filter="Robotics"
                         aria-pressed="false">Robotics</button><button type="button" data-filter="Web & AI"
                         aria-pressed="false">Web & AI</button><button type="button" data-filter="Data"
                         aria-pressed="false">Data</button></div>
-                <p class="project-count" role="status" aria-live="polite">10 projects</p>
+                <p class="project-count" role="status" aria-live="polite">9 projects</p>
             </div>
-            <div class="project-grid"><a class="project-card" href="/projects/f1.html" data-category="Data">
-                    <div class="project-image"><img src="/images/f1.webp" alt="F1 Telemetry" loading="lazy" width="720"
+            <div class="project-grid"><a class="project-card" href="/projects/Rocky-frc.html" data-category="Robotics">
+                    <div class="project-image"><img src="/images/rocky.webp" alt="Rocky FRC" loading="lazy"
+                            width="720" height="540"><span class="project-category">Robotics</span><span
+                            class="project-open" aria-hidden="true">↗</span></div>
+                    <div class="project-caption">
+                        <h3>Rocky FRC</h3>
+                        <span class="project-stack">Java · WPILib · PhotonVision</span>
+                        <p>Swerve drive. Vision. Shooting on the move.</p>
+                    </div>
+                </a>
+<a class="project-card" href="/projects/photos-classifier.html" data-category="Data">
+                    <div class="project-image"><img src="/images/photos-classifier.webp" alt="Photos Classifier"
+                            loading="lazy" width="720" height="540"><span class="project-category">Data</span><span
+                            class="project-open" aria-hidden="true">↗</span></div>
+                    <div class="project-caption">
+                        <h3>Photos Classifier</h3>
+                        <span class="project-stack">Python · OpenCV · face_recognition</span>
+                        <p>Face embeddings to sort 50GB+ of event photos.</p>
+                    </div>
+                </a>
+<a class="project-card" href="/projects/daybook.html" data-category="Web & AI">
+                    <div class="project-image"><img src="/images/daybook.svg" alt="Daybook task notebook" loading="lazy" width="1200" height="900"><span class="project-category">Web &amp; AI</span><span class="project-open" aria-hidden="true">↗</span></div>
+                    <div class="project-caption"><h3>Daybook</h3><span class="project-stack">JavaScript · Swift · macOS</span><p>A local task notebook with daily history and weekly reflection.</p></div>
+                </a>
+<a class="project-card" href="/projects/comet.html" data-category="Web &amp; AI"><div class="project-image"><img src="/images/comet-landing.webp" alt="Comet Robotics" loading="lazy" width="1200" height="900"><span class="project-category">Web &amp; AI</span><span class="project-open" aria-hidden="true">↗</span></div><div class="project-caption"><h3>Comet Robotics</h3><span class="project-stack">Web design · Robotics</span><p>A new home for Team 1885.</p></div></a>
+<a class="project-card" href="/projects/f1.html" data-category="Data">
+                    <div class="project-image"><img src="/images/f1-telemetry.svg" alt="F1 Telemetry" loading="lazy" width="720"
                             height="540"><span class="project-category">Data</span><span class="project-open"
                             aria-hidden="true">↗</span></div>
                     <div class="project-caption">
@@ -47,28 +71,18 @@
                         <span class="project-stack">Python · FastF1 · Plotly</span>
                         <p>A closer look at every lap.</p>
                     </div>
-                </a><a class="project-card" href="/projects/spotistats.html" data-category="Data">
-                    <div class="project-image"><img src="/images/SpotiStats.jpg" alt="SpotiStats" loading="lazy"
-                            width="720" height="540"><span class="project-category">Data</span><span
+                </a>
+<a class="project-card" href="/projects/neetcode-recall-loop.html" data-category="Web & AI">
+                    <div class="project-image"><img src="/images/neetcode-recall.webp" alt="NeetCode Recall Loop"
+                            loading="lazy" width="720" height="540"><span class="project-category">Web & AI</span><span
                             class="project-open" aria-hidden="true">↗</span></div>
                     <div class="project-caption">
-                        <h3>SpotiStats</h3>
-                        <span class="project-stack">Python · Spotify API</span>
-                        <p>Your listening habits, in perspective.</p>
+                        <h3>NeetCode Recall Loop</h3>
+                        <span class="project-stack">JavaScript · Chrome Extension</span>
+                        <p>Active recall checkpoints and pattern transfer for coding practice.</p>
                     </div>
-                </a><a class="project-card" href="/projects/betterness.html" data-category="iOS">
-                    <div class="project-image"><img src="/images/betterness.svg" alt="Betterness" loading="lazy"
-                            width="720" height="540"><span class="project-category">iOS</span><span class="project-open"
-                            aria-hidden="true">↗</span></div>
-                    <div class="project-caption">
-                        <h3>Betterness</h3>
-                        <span class="project-stack">Swift · SwiftUI</span>
-                        <p>A little more space for yourself.</p>
-                    </div>
-                </a><a class="project-card" href="/projects/daybook.html" data-category="Web & AI">
-                    <div class="project-image"><img src="/images/daybook.svg" alt="Daybook task notebook" loading="lazy" width="1200" height="900"><span class="project-category">Web &amp; AI</span><span class="project-open" aria-hidden="true">↗</span></div>
-                    <div class="project-caption"><h3>Daybook</h3><span class="project-stack">JavaScript · Swift · macOS</span><p>A local task notebook with daily history and weekly reflection.</p></div>
-                </a><a class="project-card" href="/projects/Marina-frc.html" data-category="Robotics">
+                </a>
+<a class="project-card" href="/projects/Marina-frc.html" data-category="Robotics">
                     <div class="project-image"><img src="/images/Marina.png" alt="Marina FRC" loading="lazy" width="720"
                             height="540"><span class="project-category">Robotics</span><span class="project-open"
                             aria-hidden="true">↗</span></div>
@@ -77,26 +91,9 @@
                         <span class="project-stack">Java · WPILIB</span>
                         <p>Autonomous motion. Real-world impact.</p>
                     </div>
-                </a><a class="project-card" href="/projects/frc-scouting-app.html" data-category="Web & AI">
-                    <div class="project-image"><img src="/images/first.png" alt="QSTAR Strategy Analysis" loading="lazy"
-                            width="720" height="540"><span class="project-category">Web & AI</span><span
-                            class="project-open" aria-hidden="true">↗</span></div>
-                    <div class="project-caption">
-                        <h3>QSTAR Strategy Analysis</h3>
-                        <span class="project-stack">React · Node.js · AI</span>
-                        <p>Better data. Smarter match strategy.</p>
-                    </div>
-                </a><a class="project-card" href="/projects/Melody-frc.html" data-category="Robotics">
-                    <div class="project-image"><img src="/images/Melody.avif" alt="Melody FRC" loading="lazy"
-                            width="720" height="540"><span class="project-category">Robotics</span><span
-                            class="project-open" aria-hidden="true">↗</span></div>
-                    <div class="project-caption">
-                        <h3>Melody FRC</h3>
-                        <span class="project-stack">Java · PathPlanner</span>
-                        <p>Precision, from practice to competition.</p>
-                    </div>
-                </a><a class="project-card" href="/projects/baap.html" data-category="Web & AI">
-                    <div class="project-image"><img src="/images/BAAP.png" alt="BAAP Website" loading="lazy" width="720"
+                </a>
+<a class="project-card" href="/projects/baap.html" data-category="Web & AI">
+                    <div class="project-image"><img src="/images/baap-landing.webp" alt="BAAP Website" loading="lazy" width="720"
                             height="540"><span class="project-category">Web & AI</span><span class="project-open"
                             aria-hidden="true">↗</span></div>
                     <div class="project-caption">
@@ -104,23 +101,15 @@
                         <span class="project-stack">HTML · CSS · JavaScript</span>
                         <p>A home for the next generation of flight.</p>
                     </div>
-                </a><a class="project-card" href="/projects/photos-classifier.html" data-category="Data">
-                    <div class="project-image"><img src="/images/photos-classifier.svg" alt="Photos Classifier"
-                            loading="lazy" width="720" height="540"><span class="project-category">Data</span><span
+                </a>
+<a class="project-card" href="/projects/spotistats.html" data-category="Data">
+                    <div class="project-image"><img src="/images/SpotiStats.jpg" alt="SpotiStats" loading="lazy"
+                            width="720" height="540"><span class="project-category">Data</span><span
                             class="project-open" aria-hidden="true">↗</span></div>
                     <div class="project-caption">
-                        <h3>Photos Classifier</h3>
-                        <span class="project-stack">Python · OpenCV · face_recognition</span>
-                        <p>Face embeddings to sort 50GB+ of event photos.</p>
-                    </div>
-                </a><a class="project-card" href="/projects/neetcode-recall-loop.html" data-category="Web & AI">
-                    <div class="project-image"><img src="/images/neetcode-recall.svg" alt="NeetCode Recall Loop"
-                            loading="lazy" width="720" height="540"><span class="project-category">Web & AI</span><span
-                            class="project-open" aria-hidden="true">↗</span></div>
-                    <div class="project-caption">
-                        <h3>NeetCode Recall Loop</h3>
-                        <span class="project-stack">JavaScript · Chrome Extension</span>
-                        <p>Active recall checkpoints and pattern transfer for coding practice.</p>
+                        <h3>SpotiStats</h3>
+                        <span class="project-stack">Python · Spotify API</span>
+                        <p>Your listening habits, in perspective.</p>
                     </div>
                 </a></div>
         </section>

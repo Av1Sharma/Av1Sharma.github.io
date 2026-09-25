@@ -348,7 +348,8 @@ a:hover {
 }
 
 .project-image {
-  height:290px;
+  aspect-ratio: 8 / 5;
+  height:auto;
   position:relative;
   overflow:hidden;
   border-radius:16px;
@@ -736,24 +737,6 @@ a:hover {
   border-top:1px solid var(--line)
 }
 
-.next-project {
-  border-top:1px solid var(--line);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:40px 0 60px;
-  gap:24px
-}
-
-.next-project h2 {
-  font-size:35px;
-  margin-top:12px
-}
-
-.next-project>span {
-  font-size:45px
-}
-
 .culture-category {
   padding:30px 0 40px;
   border-top:1px solid var(--line)
@@ -843,7 +826,7 @@ a:hover {
   }
 
   .project-image {
-    height:240px
+    height:auto
   }
 
   .beyond {
@@ -951,7 +934,7 @@ a:hover {
   }
 
   .hero-feature {
-    min-height:330px
+    min-height:auto
   }
 
   .feature-bottom h3 {
@@ -986,7 +969,7 @@ a:hover {
   }
 
   .project-image {
-    height:330px
+    height:auto
   }
 
   .project-caption h3 {
@@ -1128,10 +1111,6 @@ a:hover {
     font-size:15px
   }
 
-  .next-project h2 {
-    font-size:28px
-  }
-
   .culture-grid {
     grid-template-columns:repeat(2,minmax(0,1fr));
     gap:10px
@@ -1189,3 +1168,53 @@ a:hover {
 .demo-section video { display: block; width: 100%; height: auto; aspect-ratio: 1512 / 982; background: var(--ink); border-radius: var(--radius); }
 .demo-section > p, .download-note { color: var(--muted); font-size: 14px; line-height: 1.8; max-width: 800px; margin-top: 18px; }
 .download-note a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Featured notebook: keep the interface visible above a dedicated caption. */
+.daybook-feature { background:#e9eddd; color:var(--ink); min-height:400px; }
+.daybook-feature > img { height:calc(100% - 83px); object-fit:contain; padding:35px 12px 0; }
+.daybook-feature:after { display:none; }
+.daybook-feature:hover { color:var(--ink); }
+.daybook-feature .feature-top { justify-content:space-between; top:18px; }
+.latest-label { font-size:11px; font-weight:650; letter-spacing:.12em; }
+.daybook-feature .round-arrow { border-color:#aab79b; }
+.daybook-feature .feature-bottom { bottom:22px; gap:16px; }
+.daybook-feature .feature-bottom h3 { font-size:30px; }
+.daybook-feature .feature-bottom p { font-size:13px; color:#526444; margin-top:7px; }
+.daybook-feature .feature-bottom > span { white-space:nowrap; font-size:12px; }
+.website-preview { margin:0; overflow:hidden; border:1px solid var(--line); border-radius:20px; background:var(--soft); }
+.website-preview img { width:100%; height:auto; }
+.website-preview figcaption { font-size:12px; color:var(--muted); padding:14px 22px; }
+.website-image { height:auto; }
+.website-image img { height:auto; }
+.f1-intro { display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center; }
+.f1-intro h1 { font-size:clamp(44px,5.7vw,72px); }
+.f1-intro .detail-description { font-size:19px; }
+.telemetry-hero { margin:0; display:grid; grid-template-columns:.85fr 1.15fr; align-items:center; background:#111a1d; color:#f4f6ef; border-radius:20px; overflow:hidden; }
+.telemetry-copy { padding:48px 0 48px 42px; }
+.telemetry-kicker { color:#b5ed73; font-size:11px; letter-spacing:.15em; font-weight:600; }
+.telemetry-copy h2 { font-size:clamp(32px,4vw,50px); margin:25px 0 20px; }
+.telemetry-copy p { color:#b7c4c7; font-size:15px; max-width:310px; line-height:1.8; }
+.telemetry-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:32px; }
+.telemetry-tags span { border:1px solid #425257; padding:6px 12px; font-size:12px; border-radius:30px; color:#dbe3e4; }
+.telemetry-hero img { width:100%; height:auto; }
+.f1-features { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); padding:40px 0; border-bottom:1px solid var(--line); gap:32px; }
+.f1-features article > span { color:var(--accent); font-size:11px; letter-spacing:.1em; font-weight:600; }
+.f1-features h3 { font-size:23px; margin:18px 0 12px; }
+.f1-features p { font-size:14px; color:var(--muted); line-height:1.8; }
+@media(max-width:700px) {
+ .daybook-feature { min-height:355px; }
+ .daybook-feature .feature-bottom { left:20px; right:20px; }
+ .daybook-feature .feature-bottom p { font-size:12px; }
+ .f1-intro,.telemetry-hero,.f1-features { grid-template-columns:1fr; }
+ .f1-intro { gap:0; }
+ .telemetry-copy { padding:30px 28px 0; }
+ .telemetry-copy h2 { font-size:38px; }
+ .telemetry-copy p { max-width:none; }
+ .telemetry-hero img { margin-top:8px; }
+ .f1-features { gap:28px; }
+}
+/* Consistent responsive frames; website previews fill them without letterboxing. */
+.project-card[href="/projects/f1.html"] .project-image { background:#111a1d; }
+.project-card[href="/projects/f1.html"] .project-image img { object-fit:contain; }
+.project-card[href="/projects/comet.html"] .project-image img,
+.project-card[href="/projects/baap.html"] .project-image img { object-fit:cover; object-position:center top; }

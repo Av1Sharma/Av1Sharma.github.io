@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Rocky, Comet Robotics’ 2026 FRC robot: swerve drive, vision localization, motion-compensated turret aiming, and autonomous routines.">
+<meta name="theme-color" content="#f8f8f5"><title>Rocky FRC · Avi Sharma</title>
+<link rel="icon" href="/favicon.svg?v=96413a1869c7" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=66672eda2ce2">
+<script src="/site.js?v=d53072161f1f" defer></script></head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap"><a class="wordmark" href="/" aria-label="Avi Sharma home">avi.sharma</a>
+<nav aria-label="Main navigation"><a href="/">Home</a><a href="/projects/" aria-current="page">Projects</a><a href="/#about">About</a><a href="/culture.html">Beyond code</a></nav>
+<a class="header-contact" href="mailto:asharmava1@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></header>
+<main id="main" class="wrap">
+<section class="detail-heading"><a class="text-link back-link" href="/projects/">← All projects</a>
+<p class="eyebrow">ROBOTICS / TEAM 1885 / 2026 REBUILT</p>
+<h1>Rocky FRC<span class="accent">.</span></h1>
+<p class="detail-description">Aim while moving. Rocky’s Java control system brings together swerve drive, vision localization, and a motion-compensated turret for Comet Robotics’ 2026 robot.</p>
+<div class="detail-actions"><a class="button button-dark" href="https://github.com/Comet-FRC/C2026-REBUILT" target="_blank" rel="noopener noreferrer">View source ↗</a><a class="button button-outline" href="https://comet1885.org/robots" target="_blank" rel="noopener noreferrer">Meet the robots ↗</a></div>
+</section>
+<figure class="website-preview"><img src="/images/rocky.webp" alt="Rocky, Team 1885’s robot, on the competition field with its turret, intake, and blue bumpers" width="1600" height="1200" fetchpriority="high"><figcaption>Rocky · 2026 REBUILT · Photo: <a href="https://comet1885.org/" target="_blank" rel="noopener noreferrer">Comet Robotics ↗</a></figcaption></figure>
+<section id="details" class="detail-content">
+<div><h2>Keep moving.<br>Stay on target.</h2></div>
+<div class="prose">
+<p>Rocky’s software coordinates driving, aiming, and firing through a command-based Java architecture. Its shot calculator uses robot position, velocity, and estimated ball flight time to compensate for motion, then selects turret angle, flywheel speed, and hood angle for hub scoring or feeding.</p>
+<ul>
+<li><strong>Motion-compensated aiming.</strong> An iterative lookahead refines the shot distance and direction while accounting for movement. Interpolated lookup tables supply flywheel speed, hood angle, and flight time.</li>
+<li><strong>Vision and odometry.</strong> PhotonVision cameras and a Limelight feed position estimates into the drivetrain, with observation filtering to reject unreliable measurements.</li>
+<li><strong>Autonomous routines.</strong> PathPlanner paths combine driving with named intake and shooting commands.</li>
+<li><strong>Coordinated firing.</strong> Automatic firing checks shot validity, turret alignment, and flywheel speed before engaging the kicker.</li>
+<li><strong>Logging and simulation.</strong> AdvantageKit records subsystem and aiming data, with separate hardware and simulation implementations for development.</li>
+</ul>
+<p>Built with: Java, WPILib, PathPlanner, PhotonVision, and AdvantageKit.</p>
+</div></section>
+<section class="detail-content"><div><h2>The hardware<br>behind the software.</h2></div><div class="prose"><ul><li>MK5N swerve modules with R2 gearing.</li><li>Kraken X60 drive motors and Falcon 500 steering motors.</li><li>Two ArduCam cameras with an Orange Pi 5, plus a Limelight 3G.</li><li>Turret, flywheel, adjustable hood, intake, indexer, and kicker subsystems.</li></ul><p>Technical details from the <a href="https://github.com/Comet-FRC/C2026-REBUILT" target="_blank" rel="noopener noreferrer">team’s C2026-REBUILT repository ↗</a>.</p></div></section>
+</main>
+<footer class="site-footer wrap"><a class="wordmark" href="/">avi.sharma</a>
+<p><span>© <span data-year>2026</span> Avi Sharma</span></p>
+<div><a href="https://github.com/Av1Sharma" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:asharmava1@gmail.com">Email ↗</a></div>
+</footer>
+</body>
+</html>
