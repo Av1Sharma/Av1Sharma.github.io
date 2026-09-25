@@ -1183,3 +1183,9 @@ a:hover {
     gap: 12px;
   }
 }
+
+/* Project walkthroughs load their video only when requested. */
+.demo-section h2 { font-size: 32px; margin-bottom: 24px; }
+.demo-section video { display: block; width: 100%; height: auto; aspect-ratio: 1512 / 982; background: var(--ink); border-radius: var(--radius); }
+.demo-section > p, .download-note { color: var(--muted); font-size: 14px; line-height: 1.8; max-width: 800px; margin-top: 18px; }
+.download-note a { text-decoration: underline; text-underline-offset: 3px; }

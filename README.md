@@ -10,7 +10,7 @@ Use a server rather than opening the HTML files directly; asset and navigation p
 ## Editing
 
 - `index.html`: introduction, selected work, about, and contact.
-- `projects/index.html`: all nine projects and category filters.
+- `projects/index.html`: project collection and category filters.
 - `projects/*.html`: individual project pages and their source/demo links.
 - `culture.html`: shows, movies, and music.
 - `styles.css`: shared styling and responsive layouts.
@@ -27,3 +27,7 @@ python3 scripts/version-assets.py
 ```
 
 Commit the updated HTML files with the assets. The script adds content hashes to asset URLs so visitors load the matching files instead of a cached version from an earlier release. It is safe to run repeatedly and does not require a build step.
+
+## Daybook
+
+Daybook is included as a public browser app at `/daybook/` with a standalone Mac download. See [Daybook’s README](daybook/README.md) for setup, data storage, backups, tests, and build instructions. The portfolio project page includes the demo recording.
