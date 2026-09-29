@@ -31,3 +31,22 @@ Commit the updated HTML files with the assets. The script adds content hashes to
 ## Daybook
 
 Daybook is included as a public browser app at `/daybook/` with a standalone Mac download. See [Daybook’s README](daybook/README.md) for setup, data storage, backups, tests, and build instructions. The portfolio project page includes the demo recording.
+
+## Rebuilt projects
+
+The portfolio serves production builds of two independent apps:
+
+- `/lap-lab/`: [F1-Telemetry-App](https://github.com/Av1Sharma/F1-Telemetry-App), React/TypeScript with bundled real OpenF1 historical data.
+- `/dispatch-lab/`: [DispatchLab](https://github.com/Av1Sharma/DispatchLab), Svelte/TypeScript routing heuristics in a Web Worker. Replaces the retired SpotiStats demo.
+- `/projects/photos-classifier.html`: [PhotosClassifier](https://github.com/Av1Sharma/PhotosClassifier), downloadable local Python/OpenCV desktop app.
+
+Each source repository includes setup instructions, tests, methodology, limitations, and a 60–90 second demo-video walkthrough. `project-builds.json` records the exact source commit and deployed file hashes.
+
+To update web builds, run each source project's `npm ci`, `npm test`, and `npm run build`, then:
+
+```sh
+python3 scripts/sync-project-builds.py --f1 /path/to/F1-Telemetry-App --dispatch /path/to/DispatchLab
+python3 scripts/check-project-links.py
+```
+
+PhotosClassifier downloads include a Mac arm64 app with models, a source archive, and SHA-256 checksums. No personal photos or face embeddings are included. Mac releases are ad-hoc signed, not notarized. The original Daybook downloads and project remain unchanged.
