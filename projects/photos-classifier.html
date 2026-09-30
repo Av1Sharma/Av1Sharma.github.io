@@ -18,16 +18,11 @@
 <main id="main" class="wrap">
 <section class="detail-heading"><a class="text-link back-link" href="/projects/">← All projects</a>
 <h1>Photos Classifier<span class="accent">.</span></h1>
-<p class="detail-description">Find familiar faces in a photo library.<br>Review the matches. Keep your originals intact.</p>
-<div class="detail-actions"><a class="button button-dark" href="https://github.com/Av1Sharma/PhotosClassifier/releases/download/v2.0.0/PhotosClassifier-2.0.0-mac-arm64.zip" download>Download for Mac ↓</a><a class="button button-outline" href="https://github.com/Av1Sharma/PhotosClassifier" target="_blank" rel="noopener noreferrer">View source ↗</a></div><p class="download-note">Apple silicon · macOS 14+ · Ad-hoc signed, not Apple-notarized. First launch may require approval in Privacy &amp; Security. <a href="/downloads/PhotosClassifier-2.0.0-source.zip">Python source download</a> · <a href="/downloads/PhotosClassifier-SHA256SUMS.txt">Checksums</a></p>
+<p class="detail-description">Find people in your photos. Review and export.</p>
+<div class="detail-actions"><a class="button button-dark" href="https://github.com/Av1Sharma/PhotosClassifier/releases/download/v2.1.0/PhotosClassifier-2.1.0-macOS-arm64.zip" download>Download for Mac ↓</a><a class="button button-outline" href="https://github.com/Av1Sharma/PhotosClassifier" target="_blank" rel="noopener noreferrer">View source ↗</a></div><p class="download-note">Apple silicon · macOS 14+ · Ad-hoc signed, not Apple-notarized. First launch may require approval in Privacy &amp; Security. <a href="/downloads/PhotosClassifier-2.1.0-source.zip">Python source download</a> · <a href="/downloads/PhotosClassifier-SHA256SUMS.txt">Checksums</a></p>
 </section>
 <div class="detail-image website-image"><img src="/images/photos-classifier.webp" alt="Concept artwork of robotics event photographs organized into stacks with a face-detection frame" width="1448" height="1086"></div>
-<section id="details" class="detail-content">
-<div>
-<h2>Behind the build.</h2>
-</div>
-<div class="prose"><p>This project began with a practical problem: finding people in a large collection of robotics event photographs. The rebuilt desktop app turns that unfinished script into a local scan, review, and export workflow.</p><ul><li><strong>Local computer vision:</strong> OpenCV YuNet finds faces and SFace compares them with portraits you organize into one folder per person.</li><li><strong>Resumable scans:</strong> A SQLite catalog remembers unchanged files, rescans changed files, and records corrupt-image errors.</li><li><strong>Review first:</strong> Inspect highlighted faces, compare similarity scores, and approve or reject candidates. Close matches between profiles are flagged as ambiguous.</li><li><strong>Safe export:</strong> Copy approved photos into person folders while preserving nested filenames. Original photos are never moved or overwritten.</li></ul><p>Models run on your computer. No photo uploads, cloud account, or subscription. Face matches can be wrong and require review; large-library accuracy depends on portrait quality and the photos being scanned.</p><p>Built with: Python, OpenCV YuNet/SFace, SQLite, Pillow, Tkinter.</p></div>
-</section>
+<section id="details" class="detail-content"><div><h2>Inside the project</h2></div><div class="prose"><p>Add reference portraits, scan a folder, and review matching faces. Approve photos to copy them into person folders; originals stay untouched.</p><p>Scans resume from a local SQLite catalog. Face matching runs on your computer, with no photo uploads. Matches need human review.</p><p>Python · OpenCV · SQLite · Tkinter</p></div></section>
 </main>
 <footer class="site-footer wrap"><a class="wordmark" href="/">avi.sharma</a>
 <p><span>© <span data-year>2026</span> Avi Sharma</span></p>

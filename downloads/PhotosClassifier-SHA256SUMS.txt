@@ -1,2 +1,2 @@
-aaf4ef0721cdbff74bddf4c20c764b95f516537c9604007473b46be246d203b3  PhotosClassifier-2.0.0-mac-arm64.zip
-a5105907d39daa651f52e439a1daa2272701b1bcc224a75025d8719b23b5036e  PhotosClassifier-2.0.0-source.zip
+fabd01f39331732181ae1da304c8d1e320f0169d4bc6c056a38d8d55d252ad6c  PhotosClassifier-2.1.0-macOS-arm64.zip
+f554977e229d45574b1a8b36a3632ed65fc3bbc57754d8900b541b028cd8a603  PhotosClassifier-2.1.0-source.zip
