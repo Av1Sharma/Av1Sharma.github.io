@@ -110,6 +110,17 @@ a:hover {
   top:12px
 }
 
+/* ─── Page transitions ─── */
+@keyframes pageIn {
+  from { opacity:0; transform:translateY(12px) }
+  to   { opacity:1; transform:translateY(0) }
+}
+
+.page-enter {
+  animation: pageIn .45s ease-out both;
+}
+
+/* ─── Header ─── */
 .site-header {
   height:112px;
   display:flex;
@@ -159,32 +170,34 @@ a:hover {
   align-items:center
 }
 
+/* ─── Hero ─── */
 .hero {
-  padding-top:37px
+  padding-top:60px;
+  padding-bottom:30px;
 }
 
 .hero-grid {
   display:grid;
   grid-template-columns:.9fr 1.1fr;
-  gap:64px;
+  gap:72px;
   align-items:stretch
 }
 
 .hero-intro {
   align-self:center;
-  padding:12px 0
+  padding:20px 0
 }
 
 .hero-intro h1 {
-  font-size:44px;
-  line-height:1.12
+  font-size:52px;
+  line-height:1.08
 }
 
 .hero-intro>p {
   color:var(--muted);
   max-width:420px;
-  margin-top:20px;
-  font-size:16px;
+  margin-top:28px;
+  font-size:17px;
   line-height:1.8
 }
 
@@ -192,9 +205,10 @@ a:hover {
   display:flex;
   gap:26px;
   align-items:center;
-  margin-top:29px
+  margin-top:38px
 }
 
+/* ─── Buttons ─── */
 .button {
   min-height:48px;
   padding:12px 22px;
@@ -240,8 +254,9 @@ a:hover {
   gap:26px
 }
 
+/* ─── Hero feature card ─── */
 .hero-feature {
-  min-height:355px;
+  min-height:400px;
   position:relative;
   overflow:hidden;
   border-radius:var(--radius);
@@ -316,8 +331,9 @@ a:hover {
   margin-top:8px
 }
 
+/* ─── Sections ─── */
 .section {
-  padding-block:86px
+  padding-block:100px
 }
 
 .section-heading {
@@ -325,7 +341,7 @@ a:hover {
   justify-content:space-between;
   align-items:flex-end;
   gap:24px;
-  margin-bottom:32px
+  margin-bottom:40px
 }
 
 .section-heading .eyebrow {
@@ -336,6 +352,7 @@ a:hover {
   font-size:38px
 }
 
+/* ─── Project grid ─── */
 .project-grid {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -415,76 +432,88 @@ a:hover {
   margin-top:10px
 }
 
+/* ─── About — side-by-side layout ─── */
 .about-section {
   background:var(--soft);
-  padding-block:83px
+  padding-block:110px
 }
 
-.about-content h2 {
-  font-size:43px;
-  margin:22px 0 26px
+.about-layout {
+  display:grid;
+  grid-template-columns:.4fr .6fr;
+  gap:80px;
+  align-items:start;
 }
 
-.about-content {
-  max-width:640px;
-  text-align:center;
+.about-left h2 {
+  font-size:46px;
+  position:sticky;
+  top:80px;
+}
+
+.about-right {
+  max-width:560px;
 }
 
 .about-copy {
-  font-size:14px;
+  font-size:15px;
   color:var(--muted);
   line-height:1.85;
-  margin:0 auto 18px;
-  max-width:580px
+  margin:0 0 22px;
 }
 
 .skill-list {
   display:flex;
-  justify-content:center;
-  gap:7px;
+  gap:8px;
   flex-wrap:wrap;
-  margin-top:20px
+  margin-top:28px
 }
 
 .skill-list span {
-  font-size:10px;
-  padding:5px 10px;
+  font-size:11px;
+  padding:6px 12px;
   border:1px solid #cdd4c6;
   border-radius:5px
 }
 
-.beyond {
+/* ─── Beyond code — improved layout ─── */
+.beyond-section {
+  padding-block:100px;
+}
+
+.beyond-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:80px;
+  gap:72px;
   align-items:center
 }
 
-.beyond h2 {
-  font-size:38px;
-  margin:18px 0
+.beyond-text h2 {
+  font-size:40px;
+  margin-bottom:16px;
 }
 
-.beyond p:not(.eyebrow) {
-  font-size:14px;
+.beyond-text p {
+  font-size:15px;
   color:var(--muted);
-  margin-bottom:20px
+  line-height:1.8;
+  margin-bottom:24px
 }
 
 .culture-preview {
   display:flex;
   align-items:center;
   background:#e9e6dd;
-  padding:35px 25px;
-  gap:24px;
+  padding:40px 32px;
+  gap:28px;
   border-radius:var(--radius);
   position:relative;
   overflow:hidden;
-  min-height:230px
+  min-height:260px
 }
 
 .culture-preview h3 {
-  font-size:23px;
+  font-size:24px;
   line-height:1.35;
   letter-spacing:-.035em;
   margin-top:10px
@@ -525,23 +554,33 @@ a:hover {
   transform:rotate(35deg)
 }
 
+/* ─── Contact — cleaner layout ─── */
 .contact-section {
   border-top:1px solid var(--line);
-  padding:64px 0 72px
+  padding:80px 0 90px
 }
 
-.contact-title {
-  font-size:clamp(34px,5.3vw,67px);
-  letter-spacing:-.055em;
-  line-height:1.3;
+.contact-inner {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  margin:20px 0 12px
+  gap:32px;
+}
+
+.contact-title {
+  font-size:clamp(34px,5.3vw,60px);
+  letter-spacing:-.05em;
+  line-height:1.2;
 }
 
 .contact-title>span {
   color:var(--accent)
+}
+
+.contact-links {
+  display:flex;
+  align-items:center;
+  gap:24px;
 }
 
 .email-link {
@@ -553,6 +592,7 @@ a:hover {
   padding:8px 0
 }
 
+/* ─── Footer ─── */
 .site-footer {
   border-top:1px solid var(--line);
   display:flex;
@@ -585,6 +625,7 @@ a:hover {
   padding-block:12px
 }
 
+/* ─── Page headings ─── */
 .page-heading {
   padding:72px 0 55px
 }
@@ -600,6 +641,7 @@ a:hover {
   color:var(--muted)
 }
 
+/* ─── Collection toolbar ─── */
 .collection-toolbar {
   display:flex;
   justify-content:space-between;
@@ -664,6 +706,7 @@ a:hover {
   font-size:36px
 }
 
+/* ─── Project detail pages ─── */
 .detail-heading {
   padding:35px 0 50px
 }
@@ -737,6 +780,7 @@ a:hover {
   border-top:1px solid var(--line)
 }
 
+/* ─── Culture page ─── */
 .culture-category {
   padding:30px 0 40px;
   border-top:1px solid var(--line)
@@ -791,29 +835,31 @@ a:hover {
   padding:1px 8px
 }
 
+/* ─── Large screens ─── */
 @media(min-width:1440px) {
   .hero {
-    padding-top:50px
+    padding-top:70px
   }
 
   .hero-feature {
-    min-height:380px
+    min-height:420px
   }
 
 }
 
+/* ─── Medium screens ─── */
 @media(max-width:1000px) {
   .wrap {
     width:calc(100% - 64px)
   }
 
   .hero-grid {
-    gap:35px;
+    gap:40px;
     grid-template-columns:1fr 1fr
   }
 
   .hero-intro h1 {
-    font-size:34px
+    font-size:38px
   }
 
   .hero-actions {
@@ -829,13 +875,22 @@ a:hover {
     height:auto
   }
 
-  .beyond {
-    gap:35px
+  .about-layout {
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .about-left h2 {
+    position:static;
+  }
+
+  .beyond-grid {
+    gap:40px
   }
 
   .culture-preview {
     gap:18px;
-    padding:25px 18px
+    padding:28px 20px
   }
 
   .record {
@@ -864,8 +919,21 @@ a:hover {
     grid-template-columns:repeat(3,minmax(0,1fr))
   }
 
+  .contact-inner {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:24px;
+  }
+
+  .contact-links {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
 }
 
+/* ─── Small screens ─── */
 @media(max-width:700px) {
   .wrap {
     width:calc(100% - 40px)
@@ -894,10 +962,11 @@ a:hover {
   }
 
   .site-header nav a {
-    flex:1;
+    flex:1 0 auto;
     justify-content:center;
     padding:8px 9px;
-    font-size:12px
+    font-size:12px;
+    white-space:nowrap
   }
 
   .header-contact {
@@ -919,7 +988,7 @@ a:hover {
   }
 
   .hero-intro h1 {
-    font-size:37px
+    font-size:40px
   }
 
   .hero-intro>p {
@@ -929,8 +998,19 @@ a:hover {
   }
 
   .hero-actions {
-    gap:24px;
+    gap:16px;
     margin-top:23px
+  }
+
+  .hero-actions .button {
+    padding-inline:18px;
+    gap:16px;
+    font-size:12px
+  }
+
+  .hero-actions .text-link {
+    font-size:12px;
+    gap:12px
   }
 
   .hero-feature {
@@ -942,7 +1022,7 @@ a:hover {
   }
 
   .section {
-    padding-block:58px
+    padding-block:64px
   }
 
   .section-heading {
@@ -985,19 +1065,29 @@ a:hover {
   }
 
   .about-section {
-    padding-block:56px
+    padding-block:64px
   }
 
-  .about-content h2 {
-    font-size:38px
+  .about-layout {
+    grid-template-columns:1fr;
+    gap:28px;
   }
 
-  .beyond {
+  .about-left h2 {
+    font-size:38px;
+    position:static;
+  }
+
+  .beyond-section {
+    padding-block:64px;
+  }
+
+  .beyond-grid {
     grid-template-columns:1fr;
     gap:30px
   }
 
-  .beyond h2 {
+  .beyond-text h2 {
     font-size:31px
   }
 
@@ -1018,13 +1108,23 @@ a:hover {
   }
 
   .contact-section {
-    padding-block:44px
+    padding-block:50px
+  }
+
+  .contact-inner {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
   }
 
   .contact-title {
-    font-size:36px;
+    font-size:34px;
+  }
+
+  .contact-links {
+    flex-direction:column;
     align-items:flex-start;
-    gap:24px
+    gap:12px;
   }
 
   .site-footer {
@@ -1142,25 +1242,6 @@ a:hover {
     transition:none!important
   }
 
-}
-/* Keep the complete navigation and primary actions on one line on phones. */
-@media (max-width: 700px) {
-  .site-header nav a {
-    flex: 1 0 auto;
-    white-space: nowrap;
-  }
-  .hero-actions {
-    gap: 16px;
-  }
-  .hero-actions .button {
-    padding-inline: 18px;
-    gap: 16px;
-    font-size: 12px;
-  }
-  .hero-actions .text-link {
-    font-size: 12px;
-    gap: 12px;
-  }
 }
 
 /* Project walkthroughs load their video only when requested. */

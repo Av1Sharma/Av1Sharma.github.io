@@ -1,6 +1,41 @@
 'use strict';
 // Content and navigation remain usable without JavaScript.
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+
+// ─── Smooth page transitions ───
+// Intercept internal nav links for a fade-out/fade-in transition.
+(function () {
+  const nav = document.querySelector('.site-header nav');
+  if (!nav) return;
+
+  nav.addEventListener('click', function (e) {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    // Skip hash-only links (same page scrolls)
+    if (!href || href.startsWith('#')) return;
+
+    // Skip links that point to the current page
+    if (link.hasAttribute('aria-current')) return;
+
+    // Handle hash links to other pages (e.g. /#about from projects page)
+    const url = new URL(href, window.location.origin);
+    if (url.pathname === window.location.pathname && url.hash) return;
+
+    e.preventDefault();
+
+    document.body.style.transition = 'opacity .25s ease, transform .25s ease';
+    document.body.style.opacity = '0';
+    document.body.style.transform = 'translateY(8px)';
+
+    setTimeout(function () {
+      window.location.href = href;
+    }, 250);
+  });
+})();
+
+// ─── Project filters ───
 const filters = document.querySelector('.filters');
 if (filters) {
   filters.hidden = false;
