@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A simple explanation of Clarke–Wright savings: combine delivery trips to save distance, with a worked example.">
+<meta name="theme-color" content="#f8f8f5"><title>Clarke–Wright savings · Avi Sharma</title>
+<link rel="icon" href="/favicon.svg?v=96413a1869c7" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=a6f2ff089739">
+<script src="/site.js?v=f25dbffaccf3" defer></script></head>
+<body class="page-enter"><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap"><a class="wordmark" href="/" aria-label="Avi Sharma home">avi.sharma</a>
+<nav aria-label="Main navigation"><a href="/">Home</a><a href="/projects/" aria-current="page">Projects</a><a href="/#about">About</a><a href="/culture.html">Beyond code</a></nav>
+<a class="header-contact" href="mailto:asharmava1@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></header>
+<main id="main" class="wrap">
+<section class="detail-heading"><a class="text-link back-link" href="/projects/dispatch-lab.html">← Back to Dispatch Lab</a><h1>Clarke–Wright savings<span class="accent">.</span></h1><p class="detail-description">My way of explaining it: if two deliveries are close together, why drive back to the warehouse between them?</p></section>
+<section class="detail-content"><div><h2>Think of a pizza run.</h2></div><div class="prose"><p>Imagine you’re delivering pizzas from a shop. You need to visit two houses, A and B, and finish back at the shop. You could make a separate round trip to each house. Or you could visit both on one trip.</p><p>Clarke–Wright savings is a method for building delivery routes by joining trips that save distance. The warehouse or shop is called the <strong>depot</strong>. “Savings” means how much less you travel after joining two trips.</p></div></section>
+<section class="detail-content"><div><h2>A small example.</h2></div><div class="prose"><p>Suppose the shop is 5 km from A and 6 km from B. The houses are only 3 km apart. Assume the distance is the same in either direction.</p><ul><li><strong>Separate trips:</strong> shop → A → shop is 10 km. Shop → B → shop is 12 km. Total: <strong>22 km</strong>.</li><li><strong>One combined trip:</strong> shop → A → B → shop is 5 + 3 + 6 = <strong>14 km</strong>.</li><li><strong>Distance saved:</strong> 22 − 14 = <strong>8 km</strong>.</li></ul><p>The combined trip replaces A → shop → B with A → B. That’s why the shortcut calculation is:</p><p><strong>Savings = distance from A to the shop + distance from the shop to B − distance from A to B.</strong></p><p>Here, that’s 5 + 6 − 3 = 8 km. A larger positive number means a more useful merge.</p></div></section>
+<section class="detail-content"><div><h2>Now add more stops.</h2></div><div class="prose"><ol><li>Start with a separate out-and-back route for every stop.</li><li>Calculate the savings for pairs of stops and sort them from largest to smallest.</li><li>Try joining the routes in that order. Join only different routes, using stops at their ends, and only if the combined load fits in the vehicle.</li><li>Continue through the list until no more allowed, useful joins remain.</li></ol><p>For example, if A needs 4 boxes and B needs 5, a van holding 8 boxes cannot serve both on that trip. Saving distance doesn’t help if the cargo won’t fit. Joining stops in the middle of a route would also break the existing chain, so the method joins route ends.</p></div></section>
+<section class="detail-content"><div><h2>Good routes, quickly.</h2></div><div class="prose"><p>This is a <strong>heuristic</strong>: a practical shortcut that aims for a good answer quickly. Choosing the biggest saving first doesn’t guarantee the shortest possible overall plan, because one choice can prevent another useful combination later.</p><p>In Dispatch Lab, I use it as one way to build capacity-constrained routes. Nearest neighbor instead chooses a nearby next stop; 2-opt can improve a route by changing connections and reversing a section. Comparing them shows how different choices affect total distance.</p><p>Dispatch Lab uses made-up map coordinates and straight-line distances. A real delivery planner would need road distances and might also account for traffic, opening hours, and driver schedules.</p><div class="detail-actions"><a class="button button-dark" href="/dispatch-lab/">Try it in Dispatch Lab ↗</a></div><p>Further reading: <a href="https://web.mit.edu/1.041/www/lectures/L22-large-scale-optimization-2026sp.pdf" target="_blank" rel="noopener noreferrer">MIT’s routing lecture</a> and <a href="https://neo.lcc.uma.es/radi-aeb/WebVRP/Algorithms/clarckWright.html" target="_blank" rel="noopener noreferrer">the University of Málaga’s algorithm overview</a>.</p></div></section>
+</main>
+<footer class="site-footer wrap"><a class="wordmark" href="/">avi.sharma</a>
+<p><span>© <span data-year>2026</span> Avi Sharma</span></p>
+<div><a href="https://github.com/Av1Sharma" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:asharmava1@gmail.com">Email ↗</a></div>
+</footer>
+</body>
+</html>
