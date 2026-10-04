@@ -1317,3 +1317,5 @@ a:hover {
   .clearpath-feature .feature-bottom { left:20px; right:20px; }
   .clearpath-feature .feature-bottom > span { max-width:110px; text-align:right; }
 }
+
+.clearpath-artwork { max-width:720px; margin-inline:auto; }
