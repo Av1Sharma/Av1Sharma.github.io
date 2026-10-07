@@ -2,7 +2,7 @@
 
 A local task notebook with daily completion history and weekly reflection. No account, subscription, or GitHub login is required.
 
-[Open in your browser](https://av1sharma.github.io/daybook/) · [Download for Mac](https://av1sharma.github.io/downloads/Daybook-1.3.0-universal.dmg) · [Watch the demo](https://av1sharma.github.io/projects/daybook.html#demo)
+[Open in your browser](https://av1sharma.github.io/daybook/) · [Download for Mac](https://av1sharma.github.io/downloads/Daybook-1.3.0-universal.dmg)
 
 ## Get started
 
