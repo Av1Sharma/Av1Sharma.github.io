@@ -1,0 +1,29 @@
+name: Portfolio integrity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check local links and assets
+        run: python3 scripts/check-project-links.py
+      - name: Check cache-busting asset versions
+        run: python3 scripts/check-asset-versions.py
+      - name: Check deployed project hashes
+        run: python3 scripts/check-project-builds.py
+      - name: Test Daybook modules
+        run: node --test daybook/tests/*.test.mjs
