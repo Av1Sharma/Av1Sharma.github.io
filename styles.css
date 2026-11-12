@@ -970,3 +970,36 @@ figcaption {
     margin-top: 14px;
   }
 }
+
+/* A modest 10% expansion of the page width and spacing. */
+.wrap, .academic-page { width: min(1716px, 99%); }
+.academic-page { padding-block: 42px 31px; }
+.home-page .academic-page { padding-block: 26px 20px; }
+.home-page .introduction { gap: 35px; margin-bottom: 18px; }
+.home-page .introduction h1,
+.home-page .contact-details { margin-bottom: 26px; }
+.home-page .academic-page > section { margin-top: 20px; }
+.home-page p { margin-bottom: 11px; }
+.home-page .work-list li { margin-bottom: 7px; }
+.home-page .academic-footer { margin-top: 22px; }
+.document-identity h1 { margin-bottom: 22px; }
+.document-identity .contact-details { margin-bottom: 18px; }
+.document-nav { margin-bottom: 22px; }
+.project-layout { gap: 4.4%; }
+.document-page .detail-content { margin-top: 22px; }
+@media (min-width: 1000px) {
+  .home-page .academic-page { padding-block: 20px 15px; }
+  .home-page .academic-page > section, .home-details { margin-top: 15px; }
+  .home-details { gap: 35px; }
+  .home-page .work-list li { margin-bottom: 6px; }
+  .home-page .academic-footer { margin-top: 15px; }
+}
+@media (max-width: 700px) {
+  .wrap, .academic-page { width: calc(100% - 36px); }
+  .home-page .introduction { gap: 13px; }
+}
+
+/* GitHub contribution calendar */
+.github-calendar { margin-top: 36px; max-width: 721px; }
+.github-calendar a { display: block; }
+.github-calendar img { display: block; width: 100%; height: auto; }
