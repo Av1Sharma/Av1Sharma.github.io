@@ -9,14 +9,15 @@ Use a server rather than opening the HTML files directly; asset and navigation p
 
 ## Editing
 
-- `index.html`: introduction, selected work, about, and contact.
-- `projects/index.html`: project collection and category filters.
+- `index.html`: academic-style introduction, selected projects, experience, and personal interests.
+- `downloads/Avi-Sharma-Resume.pdf`: downloadable CV linked from the homepage.
+- `projects/index.html`: seven short project entries; the homepage features three selections.
 - `projects/*.html`: individual project pages and their source/demo links.
 - `culture.html`: shows, movies, and music.
 - `styles.css`: shared styling and responsive layouts.
-- `site.js`: project filtering, browser history, and the footer year.
+- `site.js`: the footer year on legacy pages.
 
-Core content and links work without JavaScript. JavaScript enables category filtering; the selected category is stored in the URL. Google Fonts is optional, with a system sans-serif fallback.
+Core content and links work without JavaScript. Project pages share the homepage’s name, contact details, typography, and document layout. The site uses system sans-serif fonts with a white background and blue text links.
 
 ## Updating shared assets
 
@@ -32,37 +33,27 @@ Commit the updated HTML files with the assets. The script adds content hashes to
 
 Daybook is included as a public browser app at `/daybook/` with a standalone Mac download. See [Daybook’s README](daybook/README.md) for setup, data storage, backups, tests, and build instructions.
 
-## Rebuilt projects
+## Lap Lab
 
-The portfolio serves production builds of two independent apps:
+`/lap-lab/` contains the production build of [F1-Telemetry-App](https://github.com/Av1Sharma/F1-Telemetry-App), a React/TypeScript app with bundled OpenF1 historical data. Source code, dependencies, and tests live in that repository; see [the deployment README](lap-lab/README.md).
 
-- `/lap-lab/`: [F1-Telemetry-App](https://github.com/Av1Sharma/F1-Telemetry-App), React/TypeScript with bundled real OpenF1 historical data.
-- `/dispatch-lab/`: [DispatchLab](https://github.com/Av1Sharma/DispatchLab), Svelte/TypeScript routing heuristics in a Web Worker. Replaces the retired SpotiStats demo.
-- `/projects/photos-classifier.html`: [PhotosClassifier](https://github.com/Av1Sharma/PhotosClassifier), downloadable local Python/OpenCV desktop app.
-
-The `/lap-lab/` and `/dispatch-lab/` directories contain production build output only. Their source code, dependency manifests, development servers, and tests live in the linked repositories. Do not run demo scripts from this website checkout: none are needed to view the deployed apps.
-
-`project-builds.json` records each deployed build's source commit and SHA-256 hashes. To refresh the web apps, use clean checkouts of the source repositories, follow their READMEs to install dependencies and run their documented checks/builds, then sync the generated output:
-
-To update web builds, run each source project's `npm ci`, `npm test`, and `npm run build`, then:
+`project-builds.json` records the build's source commit and SHA-256 hashes. After building and testing in the source checkout, sync it with:
 
 ```sh
-python3 scripts/sync-project-builds.py --f1 /path/to/F1-Telemetry-App --dispatch /path/to/DispatchLab
+python3 scripts/sync-project-builds.py --f1 /path/to/F1-Telemetry-App
 python3 scripts/check-project-links.py
 ```
-
-PhotosClassifier downloads include a Mac arm64 app with models, a source archive, and SHA-256 checksums. No personal photos or face embeddings are included. Mac releases are ad-hoc signed, not notarized. The original Daybook downloads and project remain unchanged.
-
-## Website project documentation
-
-- [Daybook](daybook/README.md) documents the browser and Mac editions, local data storage, backup behavior, tests, and the native Mac build.
-- [Lap Lab / F1 Telemetry](lap-lab/README.md) and [Dispatch Lab](dispatch-lab/README.md) explain that these folders are deployed builds and point to their source repositories for development instructions.
-- Other project cards link to team, client, or separate project repositories. Their source and contribution guidance belongs in those repositories; this website checkout does not contain their code.
 
 ## Site maintenance scripts
 
 - `scripts/version-assets.py` updates cache-busting hashes for shared website assets and Daybook modules.
-- `scripts/sync-project-builds.py` copies verified Lap Lab and Dispatch Lab build output into this site and refreshes `project-builds.json`.
-- `scripts/check-project-links.py` checks local links and assets on the listed project pages.
+- `scripts/sync-project-builds.py` copies verified Lap Lab build output into this site and refreshes `project-builds.json`.
+- `scripts/check-project-links.py` checks local links and assets across every HTML page, including fragment targets.
 
 These are maintenance tools for the website, not project demo scripts.
+
+## Dispatch Lab and Photos Classifier
+
+`/dispatch-lab/` serves the bundled routing demo. Its source and tests live in [DispatchLab](https://github.com/Av1Sharma/DispatchLab). Sync a tested production build with `python3 scripts/sync-project-builds.py --dispatch /path/to/DispatchLab`. Pass `--f1` as well to update both apps; omitted builds are preserved.
+
+[Photos Classifier](projects/photos-classifier.html) links to its repository and the local 2.1.0 Python source download.
