@@ -21,7 +21,7 @@ Core content and links work without JavaScript. Project pages share the homepage
 
 ## Updating shared assets
 
-After changing `styles.css`, `site.js`, or `favicon.svg`, run:
+After changing `styles.css` or `site.js`, run:
 
 ```sh
 python3 scripts/version-assets.py

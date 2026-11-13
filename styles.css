@@ -1003,3 +1003,26 @@ figcaption {
 .github-calendar { margin-top: 36px; max-width: 779px; }
 .github-calendar a { display: block; }
 .github-calendar img, .github-calendar svg { display: block; width: 100%; height: auto; }
+
+/* Keep the project index compact on desktop. */
+@media (min-width: 701px) {
+  .collection-page .academic-page { padding-block: 28px 18px; }
+  .collection-page .document-identity h1 { margin-bottom: 16px; }
+  .collection-page .document-identity .contact-details { margin-bottom: 14px; }
+  .collection-page .document-nav { margin-bottom: 16px; }
+  .collection-page .document-collection h2 { margin-bottom: 12px; }
+  .collection-page .document-collection p { margin-bottom: 12px; }
+  .collection-page .work-list li { margin-bottom: 7px; }
+  .collection-page .academic-footer { margin-top: 18px; }
+  .collection-page .academic-footer p { margin-bottom: 8px; }
+}
+
+/* Keep the landing page a little shorter on desktop. */
+@media (min-width: 1000px) {
+  .home-page .introduction { grid-template-columns: minmax(0, 1fr) minmax(0, min(var(--landing-photo-width), 72vh)); }
+  .home-page .academic-page { padding-block: 16px 12px; }
+  .home-page .introduction h1, .home-page .contact-details { margin-bottom: 22px; }
+  .home-page .academic-page > section, .home-details { margin-top: 12px; }
+  .home-page .work-list li { margin-bottom: 4px; }
+  .github-calendar { margin-top: 30px; }
+}
