@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Refresh static asset cache keys after editing CSS, JavaScript, or the favicon."""
+"""Refresh static asset cache keys after editing CSS or JavaScript."""
 from hashlib import sha256
 from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSETS = ('styles.css', 'site.js', 'favicon.svg')
+ASSETS = ('styles.css', 'site.js')
 
 
 def main():

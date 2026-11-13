@@ -2,39 +2,6 @@
 // Content and navigation remain usable without JavaScript.
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 
-// ─── Smooth page transitions ───
-// Intercept internal nav links for a fade-out/fade-in transition.
-(function () {
-  const nav = document.querySelector('.site-header nav');
-  if (!nav) return;
-
-  nav.addEventListener('click', function (e) {
-    const link = e.target.closest('a');
-    if (!link) return;
-
-    const href = link.getAttribute('href');
-    // Skip hash-only links (same page scrolls)
-    if (!href || href.startsWith('#')) return;
-
-    // Skip links that point to the current page
-    if (link.hasAttribute('aria-current')) return;
-
-    // Handle hash links to other pages (e.g. /#about from projects page)
-    const url = new URL(href, window.location.origin);
-    if (url.pathname === window.location.pathname && url.hash) return;
-
-    e.preventDefault();
-
-    document.body.style.transition = 'opacity .25s ease, transform .25s ease';
-    document.body.style.opacity = '0';
-    document.body.style.transform = 'translateY(8px)';
-
-    setTimeout(function () {
-      window.location.href = href;
-    }, 250);
-  });
-})();
-
 // ─── Project filters ───
 const filters = document.querySelector('.filters');
 if (filters) {
@@ -62,4 +29,35 @@ if (filters) {
   }));
   window.addEventListener('popstate', () => applyFilter(new URLSearchParams(window.location.search).get('category')));
   applyFilter(new URLSearchParams(window.location.search).get('category'));
+}
+
+// Render public contribution data with a Cornell-red, rounded calendar.
+const calendarLink = document.querySelector('.github-calendar a');
+if (calendarLink) {
+  fetch('https://github-contributions-api.jogruber.de/v4/Av1Sharma?y=last')
+    .then(response => { if (!response.ok) throw new Error('Calendar unavailable'); return response.json(); })
+    .then(data => {
+      if (!Array.isArray(data.contributions) || !data.contributions.length) throw new Error('No contribution data');
+      const ns = 'http://www.w3.org/2000/svg';
+      const days = data.contributions;
+      const firstDay = new Date(days[0].date + 'T00:00:00Z').getUTCDay();
+      const weeks = Math.ceil((days.length + firstDay) / 7);
+      const step = 15, cell = 12;
+      const svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('viewBox', `0 0 ${weeks * step} 105`);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', 'GitHub contribution calendar for Av1Sharma over the last year');
+      const colors = ['#ebedf0', '#f6c6c6', '#e98c8c', '#d44949', '#b31b1b'];
+      days.forEach((day, index) => {
+        const position = index + firstDay, week = Math.floor(position / 7), row = position % 7;
+        const rect = document.createElementNS(ns, 'rect');
+        rect.setAttribute('x', String(week * step)); rect.setAttribute('y', String(row * step));
+        rect.setAttribute('width', String(cell)); rect.setAttribute('height', String(cell)); rect.setAttribute('rx', '3');
+        rect.setAttribute('fill', colors[Math.min(4, Math.max(0, Number(day.level) || 0))]);
+        const title = document.createElementNS(ns, 'title');
+        title.textContent = `${day.date}: ${day.count} contribution${day.count === 1 ? '' : 's'}`;
+        rect.append(title); svg.append(rect);
+      });
+      calendarLink.replaceChildren(svg);
+    }).catch(() => {}); // Keep the profile link if the data service is unavailable.
 }

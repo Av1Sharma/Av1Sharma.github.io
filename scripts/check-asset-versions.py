@@ -12,7 +12,7 @@ def require_version(text: str, url: str, path: Path) -> None:
         raise SystemExit(f'{path.relative_to(ROOT)}: expected {url}?v={digest}')
 
 
-for asset in ('styles.css', 'site.js', 'favicon.svg'):
+for asset in ('styles.css', 'site.js'):
     path = ROOT / asset
     for page in [*ROOT.glob('*.html'), *(ROOT / 'projects').glob('*.html')]:
         require_version(page.read_text(), '/' + asset, path)

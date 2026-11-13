@@ -10,10 +10,10 @@ For development prerequisites, setup, algorithms, tests, and build commands, fol
 
 ## Updating the deployed build
 
-Build and check Dispatch Lab in a source checkout using its README. Then, from this website repository root, sync both deployed apps and their manifest:
+Build and check Dispatch Lab in a source checkout using its README. Then, from this website repository root, sync the deployed app and its manifest:
 
 ```sh
-python3 scripts/sync-project-builds.py --f1 /path/to/F1-Telemetry-App --dispatch /path/to/DispatchLab
+python3 scripts/sync-project-builds.py --dispatch /path/to/DispatchLab
 ```
 
 The script copies the generated build output and records the source commit and SHA-256 hashes in [`project-builds.json`](../project-builds.json). Review and commit the resulting `dispatch-lab/` and manifest changes together. The website link checker can then be run with `python3 scripts/check-project-links.py` from the repository root.
