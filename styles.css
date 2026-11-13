@@ -1000,6 +1000,6 @@ figcaption {
 }
 
 /* GitHub contribution calendar */
-.github-calendar { margin-top: 36px; max-width: 721px; }
+.github-calendar { margin-top: 36px; max-width: 779px; }
 .github-calendar a { display: block; }
-.github-calendar img { display: block; width: 100%; height: auto; }
+.github-calendar img, .github-calendar svg { display: block; width: 100%; height: auto; }
